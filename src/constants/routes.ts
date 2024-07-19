@@ -1,0 +1,16 @@
+export const PathName = {
+  Home: "/",
+  OrderPage: "/orderPage",
+  SignIn: "/signIn",
+  SignUp: "/signUp",
+  Dashboard: "/dashboard",
+  AllTickets: "/allTickets",
+  CreateTicket: "/createTicket",
+  ServiceManagement: "/serviceManagement",
+  ActiveServices: "/activeServices",
+  PaymentsHistory: "/paymentsHistory",
+  TopUpBalance: "/topUpBalance",
+  PaymentDetails: "/paymentDetails",
+  PaymentDetailsChange: "/paymentDetailsChange",
+  LoginPasswordChange: "/loginPasswordChange",
+}

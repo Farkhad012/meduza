@@ -1,0 +1,59 @@
+@import '../../assets/styles/general.scss';
+
+
+.footer {
+  line-height: 1.2;
+  letter-spacing: 2%;
+  color: $footer-link-color;
+
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 59px 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__container {
+      flex-direction: column;
+      padding: 63px 0 62px;
+      gap: 40px;
+
+    }
+  }
+
+  &__nav {
+    max-width: 215px;
+  }
+
+  &__nav-title {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__nav-title {
+      font-size: 16px;
+    }
+  }
+
+  &__nav-links {
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__nav-links {
+      font-size: 14px;
+    }
+  }
+
+}
+
+.wrapper {
+  background-color: $footer-bg-color;
+}

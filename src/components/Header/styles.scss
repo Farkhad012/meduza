@@ -1,0 +1,79 @@
+@import '../../assets/styles/general.scss';
+
+.header {
+  font-family: 'Unbounded';
+
+  &__container {
+    padding: 53px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__container{
+      padding: 38px 0;
+    }
+  }
+
+  &__button {
+    font-weight: 300;
+    background: $header-btn-bg;
+    color: $light-text-color;
+    padding: 22px 43px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__button {
+      padding: 23px 53px;
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__button {
+      padding: 17px 32px;
+      font-size: 10px;
+    }
+  }
+
+  &__button-round {
+    flex: 0 0 60px;
+    height: 60px;
+    position: relative;
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    color: $btn-txt-color;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__button-round {
+      flex: 0 0 45px;
+      height: 45px;
+    }
+  }
+
+  &__button-round::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    padding: 1px;
+    /* Толщина границы */
+    background: $header-btn-bg;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}

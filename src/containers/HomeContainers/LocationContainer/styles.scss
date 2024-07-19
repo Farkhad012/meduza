@@ -1,0 +1,61 @@
+@import '../../../assets/styles/general.scss';
+
+.location {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 74px 100px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__container {
+      gap: 51px;
+      padding: 50px 40px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__container {
+      gap: 51px;
+      padding: 50px 0;
+    }
+  }
+
+  &__title {
+    max-width: 648px;
+    font-family: 'Unbounded Blond';
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__title {
+      max-width: 540px;
+      font-size: 22px;
+    }
+  }
+
+  &__title>span {
+    color: $primary-text-color;
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__img {
+      padding: 0 20px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__img {
+      padding: 0;
+    }
+  }
+}
