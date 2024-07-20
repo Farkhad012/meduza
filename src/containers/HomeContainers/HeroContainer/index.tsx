@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Button, Logo } from "../../../components/";
+import { Button, Logo } from 'components/';
+
 import './styles.scss';
 
-const HeroContainer: React.FC = () => {
+export const HeroContainer: React.FC = () => {
   return (
     <section className="hero">
       <div className="container">
@@ -19,8 +20,5 @@ const HeroContainer: React.FC = () => {
         </div>
       </div>
     </section>
-
   )
 }
-
-export { HeroContainer };

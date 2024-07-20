@@ -1,10 +1,12 @@
-import React from "react";
-
+import React from 'react';
 // import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+import { PathName } from 'constants/';
 
 import './styles.scss';
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   // const location = useLocation();
   // const currentPath = location.pathname;
 
@@ -14,12 +16,14 @@ const Header: React.FC = () => {
         <div className="wrapper">
           <div className="header__container">
             <button className="header__button-round">RU</button>
-            <button className="header__button">Личный кабинет</button>
+
+            <NavLink to={PathName.UserAccount}>
+              <button className="header__button">Личный кабинет</button>
+            </NavLink>
+
           </div>
         </div>
       </div>
     </header>
   );
 };
-
-export { Header };

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import './styles.scss';
 
@@ -7,12 +7,10 @@ interface ButtonProps {
   text: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ color, text }) => {
+export const Button: React.FC<ButtonProps> = ({ color, text }) => {
   return (
     <button className={`button ${color}`}>
       {text}
     </button>
   );
 };
-
-export { Button };

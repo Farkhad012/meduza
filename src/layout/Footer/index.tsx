@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
-// import { PathName } from "../../constants";
+// import { PathName } from 'constants/';
 
 import './styles.scss';
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="container">
@@ -35,5 +35,3 @@ const Footer: React.FC = () => {
     </footer>
   )
 }
-
-export { Footer };

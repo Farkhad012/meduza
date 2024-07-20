@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import map from '../../../assets/images/map.png'
+import map from 'assets/images/map.png'
+
 import './styles.scss';
 
-const LocationContainer: React.FC = () => {
+export const LocationContainer: React.FC = () => {
   return (
     <section className="location">
       <div className="container">
@@ -17,10 +18,6 @@ const LocationContainer: React.FC = () => {
           </div>
         </div>
       </div>
-
     </section>
-
   )
 }
-
-export { LocationContainer };

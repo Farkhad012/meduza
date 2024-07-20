@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { HeroContainer, LocationContainer } from '../../containers/HomeContainers';
+import { HeroContainer, LocationContainer } from 'containers/HomeContainers';
+
 import './styles.scss';
 
-const HomePage: React.FC = () => {
+export const HomePage: React.FC = () => {
   return (
     <>
       <HeroContainer />
@@ -11,5 +12,3 @@ const HomePage: React.FC = () => {
     </>
   )
 }
-
-export { HomePage };
