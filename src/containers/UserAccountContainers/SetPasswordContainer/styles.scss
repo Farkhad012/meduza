@@ -1,0 +1,29 @@
+@import '/src/assets/styles/general.scss';
+
+.set-password {
+
+
+  &__container {
+
+    width: 100%;
+    background-color: $red;
+    border-radius: 25px;
+    padding: 27px 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__container p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  &__container button {
+    padding: 18px 46px;
+  }
+
+ 
+}

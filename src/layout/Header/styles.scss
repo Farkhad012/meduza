@@ -3,6 +3,17 @@
 .header {
   font-family: 'Unbounded';
 
+  &__buttons {
+    display: flex;
+    gap: 40px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__buttons {
+      order: 3;
+    }
+  }
+
   &__container {
     padding: 53px 0;
     display: flex;
@@ -10,7 +21,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    &__container{
+    &__container {
       padding: 38px 0;
     }
   }
@@ -41,7 +52,7 @@
   }
 
   &__button-round {
-    flex: 0 0 60px;
+    width: 60px;
     height: 60px;
     position: relative;
     display: inline-block;
@@ -54,7 +65,7 @@
 
   @media screen and (max-width: 768px) {
     &__button-round {
-      flex: 0 0 45px;
+      width: 45px;
       height: 45px;
     }
   }
@@ -75,5 +86,11 @@
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header-support {
+    display: none;
   }
 }

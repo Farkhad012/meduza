@@ -1,6 +1,14 @@
 import React from 'react';
 
-import { HeroContainer, LocationContainer } from 'containers/HomeContainers';
+import {
+  HeroContainer,
+  LocationContainer,
+  FeaturesContainer,
+  ProtocolsContainer,
+  AdvantagesContainer,
+  PrivacySecurityContainer,
+  PlatformsContainer
+} from 'containers/HomeContainers';
 
 import './styles.scss';
 
@@ -9,6 +17,11 @@ export const HomePage: React.FC = () => {
     <>
       <HeroContainer />
       <LocationContainer />
+      <FeaturesContainer />
+      <ProtocolsContainer />
+      <AdvantagesContainer />
+      <PrivacySecurityContainer />
+      <PlatformsContainer />
     </>
   )
 }

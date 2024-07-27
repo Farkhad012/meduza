@@ -1,0 +1,41 @@
+@import '/src/assets/styles/general.scss';
+
+.modal-paper {
+  background-color: white;
+  max-width: 760px;
+  margin: 0 auto;
+  height: max-content;
+  border-radius: $border-radius;
+  // filter: drop-shadow(0 4px 4px black);
+  padding: 76px 100px;
+  position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .modal-paper {
+    padding: 62px 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal-paper {
+    padding: 29px 20px;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background: transparent;
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .close-btn {
+    width: 15px;
+    height: 15px;
+  }
+}
+

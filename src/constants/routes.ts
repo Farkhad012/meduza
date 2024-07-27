@@ -13,4 +13,6 @@ export const PathName = {
   PaymentDetails: '/paymentDetails',
   PaymentDetailsChange: '/paymentDetailsChange',
   LoginPasswordChange: '/loginPasswordChange',
-}
+} as const;
+
+export type PathName = typeof PathName[keyof typeof PathName];

@@ -1,0 +1,23 @@
+import React, { forwardRef } from 'react';
+import { Box } from '@mui/material';
+import { close } from 'assets/images/icons';
+import './styles.scss';
+
+interface ModalPaperProps {
+  children: React.ReactNode;
+  handleClose: () => void;
+}
+
+export const ModalPaper = forwardRef<HTMLDivElement, ModalPaperProps>(({ children, handleClose }, ref) => {
+  return (
+    <Box ref={ref} className="modal-paper">
+      <button
+        onClick={handleClose}
+        className='close-btn'>
+        <img src={close} alt="close" />
+      </button>
+      {children}
+    </Box>
+  );
+});
+

@@ -1,51 +1,43 @@
-import amneziaWG from '/amneziaWG.png';
-import android from './android.png';
-import check from './check.png';
-import cross from './cross.png';
-import dropdown from './dropdown.png';
-import encryption from './encryption.png';
-import line from './line.png';
-import linux from './linux.png';
-import lockout from './lockout.png';
-import logs from './logs.png';
-import macos from './macos.png';
-import overCloak from './over-cloak.png';
-import point from './point.png';
-import popular from './popular.png';
-import price from './price.png';
-import privacyLevel from './privacy-level.png';
-import router from './router.png';
-import security from './security.png';
-import settings from './settings.png';
-import share from './share.png';
-import speed from './speed.png';
-import windows from './windows.png';
-import world from './world.png';
-import x from './x.png';
+// HeroContainer ------------------------------------------------------------------
+// export { default as line } from './line.svg';
 
-export {
-  amneziaWG,
-  android,
-  check,
-  cross,
-  dropdown,
-  encryption,
-  line,
-  linux,
-  lockout,
-  logs,
-  macos,
-  overCloak,
-  point,
-  popular,
-  price,
-  privacyLevel,
-  router,
-  security,
-  settings,
-  share,
-  speed,
-  windows,
-  world,
-  x,
-};
+// LocationContainer --------------------------------------------------------------
+// export { default as map } from './map.svg';
+// export { default as point } from './point.svg';
+
+// FeaturesContainer --------------------------------------------------------------
+// export { default as privacyLevel } from './privacy-level.svg';
+// export { default as security } from './security.svg';
+// export { default as price } from './price.svg';
+// export { default as speed } from './speed.svg';
+
+// ProtocolsContainer -------------------------------------------------------------
+export { default as lockout } from './lockout.svg';
+export { default as popular } from './popular.svg';
+export { default as amneziaWG } from './amneziaWG.svg';
+export { default as overCloak } from './over-cloak.svg';
+// AdvantagesContainer ------------------------------------------------------------
+export { default as share } from './share.svg';
+export { default as world } from './world.svg';
+export { default as settings } from './settings.svg';
+// PrivacySecurityContainer -------------------------------------------------------
+export { default as lockout2 } from './lockout2.svg';
+export { default as logs } from './logs.svg';
+export { default as encryption } from './encryption.svg';
+
+// ProtocolsContainer -------------------------------------------------------------
+
+// SupportedPlatformsContainer  ---------------------------------------------------
+// export { default as router } from './router.svg';
+// export { default as macos } from './macos.svg';
+// export { default as windows } from './windows.svg';
+// export { default as android } from './android.svg';
+// export { default as linux } from './linux.svg';
+
+// Modal  -------------------------------------------------------------------------
+// export { default as check } from './check.svg';
+export { default as close } from './close.svg';
+// export { default as dropdown } from './dropdown.svg';
+
+// Personal Account  --------------------------------------------------------------
+export { default as burgerIcon } from './burger-icon.svg';

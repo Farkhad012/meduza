@@ -1,16 +1,20 @@
 import React from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
-// import { PathName } from 'constants/';
+import { PathName } from 'constants/';
 
 import './styles.scss';
 
 export const Footer: React.FC = () => {
+
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <footer className="footer">
       <div className="container">
-        <div className="wrapper footer_bg">
+        <div className={`wrapper " ${currentPath === PathName.Home ? "landing" : "account"}`}>
             <nav className="footer__container">
               <div className="footer__nav">
                 <h4 className="footer__nav-title">About us</h4>

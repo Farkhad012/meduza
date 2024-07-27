@@ -1,1 +1,233 @@
 @import '/src/assets/styles/general.scss';
+
+.privacy {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__container {
+      padding: 0;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+
+  &__header {
+    display: grid;
+    grid-template-areas:
+      "title img card";
+    grid-template-columns: 250px 52px 372px;
+    align-items: center;
+    gap: 48px;
+    padding: 56px 88px 56px 100px;
+    overflow: hidden;
+    border-radius: 25px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__header {
+      grid-template-columns: 220px 33px 208px;
+      padding: 50px;
+      // gap: 28px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__header {
+      grid-template-areas:
+        "img title"
+        "img card";
+      grid-template-columns: none;
+      padding: 50px 50px 50px 20px;
+      gap: 15px 28px;
+    }
+  }
+
+  &__header h2 {
+    grid-area: title;
+  }
+
+  &__header span {
+    display: inline-block;
+    color: $secondary-text-color
+  }
+
+  &__header-icon {
+    grid-area: img;
+    width: 52px;
+    background-color: $header-icon-bg;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__header-icon {
+      width: 33px;
+      align-self: center;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__header-icon {
+      align-items: start;
+      align-self: stretch;
+      background: $header-gradient-icon-bg;
+    }
+  }
+
+  &__header-icon img {
+    width: 22px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__header-icon img {
+      width: 14px;
+    }
+  }
+
+  &__header-card {
+    grid-area: card;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+
+  &__header-card p {
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__header-card p {
+      font-size: 16px;
+    }
+  }
+
+  &__header-card span {
+    color: white;
+    font-weight: 400;
+  }
+
+
+  @media screen and (max-width: 1024px) {
+    &__header-card span {
+      display: inline;
+    }
+  }
+
+  &__content {
+    margin-top: 100px;
+    display: flex;
+    gap: 86px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__content {
+      gap: 63px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__content {
+      margin-top: 53px;
+      gap: 33px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__content-card {
+    display: flex;
+    gap: 40px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__content-card {
+      gap: 20px;
+    }
+  }
+
+  &__content-icon {
+    background-color: $icon-bg;
+    padding: 43px 15px 0px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__content-icon {
+      padding: 27px 10px 0;
+    }
+  }
+
+  &__content-icon img {
+    align-self: start;
+    width: 28px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__content-icon img {
+      width: 18px;
+    }
+  }
+
+  &__content-text h3 {
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 400;
+    width: 240px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__content-text h3 {
+      font-size: 20px;
+      width: 168px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__content-text h3 {
+      font-size: 18px;
+    }
+  }
+
+  &__content-text p {
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 1.2;
+    width: 310px;
+    font-weight: lighter;
+    max-width: 300px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__content-text p {
+      font-size: 16px;
+      max-width: 200px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__content-text p {
+      font-size: 14px;
+      max-width: 200px;
+    }
+  }
+
+  &__content-text:last-child p {
+    // width: 210px;
+  }
+
+
+
+}

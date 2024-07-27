@@ -1,1 +1,9 @@
 @import '/src/assets/styles/general.scss';
+
+.user-account {
+  &__content {
+    padding: 40px 0 86px;
+    display: flex;
+    gap: 40px;
+  }
+}

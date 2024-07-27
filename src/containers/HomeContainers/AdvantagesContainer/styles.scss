@@ -1,1 +1,115 @@
 @import '/src/assets/styles/general.scss';
+
+.advantages {
+  &__container {
+    padding: 0 100px 82px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__container {
+      padding: 0 0 90px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__container {
+      padding: 0 0 46px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__items {
+      gap: 54px;
+    }
+  }
+
+  &__item-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: $icon-bg;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+  }
+
+  &__item>p,
+  &__item>span {
+    margin-left: 3px;
+  }
+
+  &__item p {
+    margin-top: 20px;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    &__item p {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    &__item p {
+      font-size: 18px;
+    }
+  }
+
+  &__item:nth-child(1) p {
+    width: 240px;
+  }
+
+  &__item:nth-child(2) p {
+    width: 358px;
+  }
+
+  &__item:nth-child(3) p {
+    width: 397px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__item:nth-child(1) p {
+      width: 190px;
+    }
+  
+    &__item:nth-child(2) p {
+      width: 100%;
+    }
+  
+    &__item:nth-child(3) p {
+      width: 230px;
+    }
+  }
+
+  &__item span {
+    width: 300px;
+    font-size: 20px;
+    display: block;
+    margin-top: 15px;
+    line-height: 1.2;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__item span {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__item span {
+      width: 250px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+
+}
