@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    z-index: 99;
   }
 
   .menu-wrapper {
@@ -197,7 +198,21 @@
   line-height: 1.2;
   width: 246px;
   color: $account-link-color;
+
+  &>button {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.2;
+    width: 246px;
+    color: $account-link-color;
+    background-color: transparent;
+  }
 }
+
+
 
 @media screen and (max-width: 1024px) {
   .nav__menu-links {
@@ -209,6 +224,9 @@
   color: $secondary-text-color;
 }
 
+.active {
+  color: $secondary-text-color;
+}
 
 .nav-container__footer {
   margin-top: 38px;
@@ -220,7 +238,6 @@
   }
 }
 
-.nav__container-footer button {
-  padding: 18px 64px;
-  font-weight: normal;
+.nav-container__footer .button {
+  padding: 18px 52px;
 }

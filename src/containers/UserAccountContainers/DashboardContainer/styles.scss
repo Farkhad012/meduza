@@ -9,3 +9,16 @@
   padding: 47px 60px;
   color: $grey;
 }
+
+@media screen and (max-width: 1024px) {
+  .dashboard {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard {
+    padding: 28px 20px;
+
+  }
+}

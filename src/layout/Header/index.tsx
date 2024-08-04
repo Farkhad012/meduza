@@ -1,34 +1,36 @@
 import React, { useState, useContext } from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { PathName } from 'constants/';
 
-import { LoginFormContext } from 'context/loginFormContext';
+import { ModalContext } from 'context/ModalContext';
 import { BurgerContext } from 'context/burgerContext';
 
 import { SignUp, SignIn } from 'pages';
 import { Logo, ModalPaper } from 'components';
 import { Modal } from '@mui/material';
 
+import { AuthContext } from 'context/authContext';
+import { LangMenu } from 'components/LangMenu';
+
 import './styles.scss';
 
 export const Header: React.FC = () => {
-  const loginModalContext = useContext(LoginFormContext);
+  const { t } = useTranslation('header');
+  const { isAuthenticated } = useContext(AuthContext)
+  const loginModalContext = useContext(ModalContext);
   const burgerContext = useContext(BurgerContext);
+  const navigate = useNavigate();
 
   const [isSignUp, setIsSignUp] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 
   const location = useLocation();
   const currentPath = location.pathname;
+
   const handleClose = () => {
     loginModalContext.setOpenModal(false);
   };
-
-  const handleOpen = () => {
-    loginModalContext.setOpenModal(true);
-  }
 
   const handleToggleMenu = () => {
     burgerContext.setIsBurgerOpen(!burgerContext.isBurgerOpen);
@@ -38,6 +40,10 @@ export const Header: React.FC = () => {
     setIsSignUp(!isSignUp);
   }
 
+  const handleClick = () => {
+    isAuthenticated ? navigate(PathName.AccountPage) : loginModalContext.setOpenModal(true);
+  }
+
   return (
     <header className="header">
       <div className="container">
@@ -45,20 +51,29 @@ export const Header: React.FC = () => {
           <div className="header__container">
             {currentPath === PathName.Home ? (
               <>
-                <button className="header__button-round">RU</button>
-                <NavLink
+                <LangMenu />
+                <button
+                  onClick={handleClick}
                   className="header__button"
-                  to={PathName.UserAccount}
-                >Личный кабинет
-                </NavLink>
+                >
+                  {t('Personal_account_')}
+                </button>
               </>
             ) : (
               <>
                 <Logo />
                 <div className="header__buttons">
-                  <button className="header__button-round">RU</button>
-                  <button className="header__button header-support">Поддержка</button>
-                  <button onClick={handleToggleMenu} className="header__button burger">Меню</button>                  
+                  <LangMenu classNameBox="account-lang-button" />
+                  <button className="header__button header-support">
+                    {t('Support_')}
+                  </button>
+                  <button onClick={handleToggleMenu} className="header__button burger">
+                    {t('Menu_')}
+                  </button>
+                  <div className="currency">
+                    <p>{t('Id_')}:000000</p>
+                    <span>{t('Currency_')}: 0.00 </span>
+                  </div>
                 </div>
               </>
             )}

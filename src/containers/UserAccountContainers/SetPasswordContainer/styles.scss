@@ -4,7 +4,6 @@
 
 
   &__container {
-
     width: 100%;
     background-color: $red;
     border-radius: 25px;
@@ -13,17 +12,53 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 50px;
   }
 
-  &__container p {
+  @media screen and (max-width: 1024px) {
+    &__container {
+      padding: 27px 27px 27px 50px;    
+    }
+  }
+
+  &__container button {
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__container {
+      padding: 25px 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;      
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: white;
     font-weight: 300;
     font-size: 18px;
     line-height: 1.1;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__title {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__title {
+      min-width: 250px;
+      text-align: center;
+      font-size: 12px;
+    }
   }
 
   &__container button {
     padding: 18px 46px;
   }
 
- 
+
 }

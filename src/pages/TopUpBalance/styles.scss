@@ -1,0 +1,182 @@
+@import '/src/assets/styles/general.scss';
+
+.top-up-balance {
+
+
+
+  .amount-input {
+    font-family: $primary-font;
+    color: $modal-text-color;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 24px 40px;
+    border-radius: 20px;
+    background-color: #f5f5f5;   
+
+    textarea {
+      width: 100%;
+      padding: 14px 0px;
+      font-weight: 300;
+
+      border: none;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: #f5f5f5;
+      white-space: pre-wrap;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      textarea {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      textarea {
+        font-size: 12px;
+      }
+    }
+
+    button {
+      padding: 14px 32px;
+      outline: 1px solid $border-color;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: #f5f5f5;
+      font-weight: 300;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: #bbb;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .amount-input {
+      gap: 50px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .amount-input {
+      flex-direction: column;
+      align-items: start;
+      gap: 15px;
+    }
+  }
+
+  & h2 {
+    margin: 40px 0 0 40px;
+  }
+
+  .payment-methods {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .payment-method {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 40px;
+      outline: 1px solid $border-color;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      @media screen and (max-width: 1024px) {
+        .payment-method {
+          padding: 30px;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .payment-method {
+          padding: 20px;
+        }
+      }
+
+      &.selected {
+        // outline: 2px solid #000;
+      }
+      &.disabled {
+        // outline: 2px solid #000;
+        opacity: 0.3;
+      }
+
+      &:hover {
+        background-color: #F6F6F6;
+      }
+
+      .payment-logo {
+        margin-right: 20px;
+
+        img {
+          width: 200px;
+          height: auto;
+        }
+
+        @media screen and (max-width: 1024px) {
+          img {
+            width: 150px;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          img {
+            width: 136px;
+          }
+        }
+      }
+
+      .payment-info {
+        h3 {
+          // margin: 0 0 5px 0;
+          color: $dark-text-color;
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        @media screen and (max-width: 1024px) {
+          h3 {
+            font-size: 16px;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          h3 {
+            font-size: 14px;
+          }
+        }
+
+        p {
+          margin-top: 3px;
+          font-size: 16px;
+          font-weight: 300;
+          color: $modal-text-color;
+        }
+  
+        @media screen and (max-width: 1024px) {
+          p {
+            font-size: 14px; 
+          }
+        }
+  
+        @media screen and (max-width: 768px) {
+          p {
+            font-size: 12px; 
+          }
+        }
+        }
+    }
+  }
+}

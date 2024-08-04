@@ -1,9 +1,10 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { AuthProvider } from "./authContext";
-import { LoginFormProvider } from "./loginFormContext";
-import { BurgerProvider } from "./burgerContext";
+import { AuthProvider } from './authContext';
+import { ModalProvider } from './ModalContext';
+import { BurgerProvider } from './burgerContext';
+import { NotificationProvider } from './notificationContext';
 
 interface MainProviderProps {
   children: ReactNode;
@@ -11,15 +12,16 @@ interface MainProviderProps {
 
 export const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   return (
-    <BurgerProvider>
-      <LoginFormProvider>
-        <AuthProvider>
-          <BrowserRouter>
-            {children}
-          </BrowserRouter>
-        </AuthProvider>
-      </LoginFormProvider>
-    </BurgerProvider>
-  )
-}
-
+    <BrowserRouter>
+      <AuthProvider>
+        <ModalProvider>
+          <BurgerProvider>
+            <NotificationProvider>
+                {children}
+            </NotificationProvider>
+          </BurgerProvider>
+        </ModalProvider>
+      </AuthProvider>
+    </BrowserRouter>
+  );
+};

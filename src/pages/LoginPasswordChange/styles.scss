@@ -1,0 +1,108 @@
+@import '/src/assets/styles/general.scss';
+
+.change {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.change {
+  &__form-content {
+    margin-top: 45px;
+    font-family: 'Unbounded blond';
+    color: $modal-text-color;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form-content {
+      margin-top: 40px;
+    }
+  }
+
+  &__form-item {
+    margin-bottom: 40px;
+  }
+
+  &__form-item:nth-child(2) {
+    margin-bottom: 30px;
+  }
+
+  &__form-item p {
+    font-size: 20px;
+    line-height: 1.1;
+    color: $dark-text-color;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form-item p {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-item p {
+      font-size: 14px;
+    }
+  }
+
+  &__form-item input {
+    margin-top: 20px;
+    padding: 30px 20px;
+    font-size: 20px;
+    line-height: 1.1;
+    color: $modal-text-color;
+    outline: 1px solid $border-color;
+    border-radius: 20px;
+    width: 100%;
+    height: 80px;
+    white-space: wrap;
+    white-space: pre-wrap;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form-item input {
+      margin-top: 16px;
+      height: 66px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-item input {
+      height: 60px;
+    }
+  }
+
+  &__form-footer {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form-footer {
+      margin-top: 40px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-footer {
+      margin-top: 35px;
+      gap: 20px;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__form-footer button {
+    font-weight: 300;
+    width: 300px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-footer button {
+      width: 100%;
+    }
+  }
+
+}

@@ -1,0 +1,10 @@
+{
+  "Your_privacy_is_a_": " Ваша приватность ",
+  "Priority_": " - приоритет ",
+  "You_fully_control_your_data_": " Вы полностью контролируете свои данные.",
+  "The_application_does_not_collect_or_transmit_any_statistics_logs_or_other_information_about_users_and_their_data_": " Приложение не собирает и не передает никакой статистики, логов и другой информации о пользователях и их данных.",
+  "Does_not_keep_logs_": " Не сохраняет логи ",
+  "A_separate_container_is_launched_for_each_vpn_protocol_They_can_be_deleted_with_one_click_They_do_not_write_logs_inside_themselves_and_do_nothing_other_than_their_direct_task_": " Для каждого VPN-протокола запускается отдельный контейнер. Их можно удалить в один клик. Они не пишут логи внутри себя, и не делают ничего, кроме своей прямой задачи. ",
+  "Uses_smart_encryption_": " Использует умное шифрование",
+  "When_connecting_the_client_generates_a_new_key_and_a_new_security_certificate_and_sends_it_to_the_server_": " При подключении клиент генерирует новый ключ и новый сертификат безопасности и пересылает его на сервер "
+}

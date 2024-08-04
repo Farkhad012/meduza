@@ -1,22 +1,29 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { lockout2, logs, encryption } from 'assets/images/icons'
 
 import './styles.scss';
 
 export const PrivacySecurityContainer: React.FC = () => {
+  const { t } = useTranslation('privacySecurity');
+  
   return (
     <section id="privacy">
       <div className="privacy__container">
         <div className="privacy__header blur gradient-bg gradient-bg-top">
-          <h2>Ваша приватность <span>- приоритет</span></h2>
+          <h2>
+            {t('Your_privacy_is_a_')}
+            <span>{t('Priority_')}</span></h2>
           <div className="privacy__header-icon">
             <img src={lockout2} alt="lockout-icon" />
           </div>
           <div className="privacy__header-card">
-            <p>
-              <span>Вы полностью контролируете свои данные. </span>
-              Приложение не собирает и не передаёт никакой статистики, логов и другой информации о пользователях и их данных.
+            <p className="privacy__header-card-text">
+              <span>
+                {t('You_fully_control_your_data_')}
+              </span>
+              {t('The_application_does_not_collect_or_transmit_any_statistics_logs_or_other_information_about_users_and_their_data_')}
             </p>
           </div>
         </div>
@@ -26,10 +33,11 @@ export const PrivacySecurityContainer: React.FC = () => {
               <img src={logs} alt="logs-icon" />
             </div>
             <div className="privacy__content-text">
-              <h3>Не сохраняет логи</h3>
+              <h4>
+                {t('Does_not_keep_logs_')}
+              </h4>
               <p>
-                Для каждого VPN-протокола запускается отдельный контейнер. Их можно удалить в один клик. Они не пишут логи внутри себя,
-                и не делают ничего, кроме своей прямой задачи.
+                {t('A_separate_container_is_launched_for_each_vpn_protocol_They_can_be_deleted_with_one_click_They_do_not_write_logs_inside_themselves_and_do_nothing_other_than_their_direct_task_')}
               </p>
             </div>
           </div>
@@ -38,10 +46,11 @@ export const PrivacySecurityContainer: React.FC = () => {
               <img src={encryption} alt="encryption-icon" />
             </div>
             <div className="privacy__content-text">
-              <h3>Использует умное шифрование</h3>
+              <h4>
+                {t('Uses_smart_encryption_')}
+              </h4>
               <p>
-                При подключении клиент генерирует новый ключ
-                и новый сертификат безопасности и пересылает его на сервер
+                {t('When_connecting_the_client_generates_a_new_key_and_a_new_security_certificate_and_sends_it_to_the_server_')}
               </p>
             </div>
           </div>

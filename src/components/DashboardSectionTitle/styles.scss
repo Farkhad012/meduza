@@ -1,0 +1,20 @@
+@import '/src/assets/styles/general.scss';
+
+.title {
+  font-family: $primary-font;
+  color: $dark-text-color;
+  font-size: 22px;
+  line-height: 1.1; 
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 18px;
+  }
+}

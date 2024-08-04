@@ -1,0 +1,99 @@
+@import '/src/assets/styles/general.scss';
+
+.table-wrapper {
+  width: 100%;
+  background-color: $grey;
+  padding: 28px 40px 40px;
+  border-radius: 20px;
+  overflow-x: auto;
+  min-width: auto;
+  position: relative;
+  margin-bottom: 30px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .table-wrapper {
+    padding: 28px 20px 40px;
+  }
+}
+
+.dashboard-table {
+  width: 100%;
+  background-color: $grey;
+  border-radius: 20px;
+  color: $modal-text-color;
+  font-weight: 300;
+  table-layout: auto;
+  border-collapse: separate;
+  border-spacing: 10px;
+  text-align: center;
+  font-family: $primary-font;
+  font-size: 12px;
+
+  & thead {
+    margin-bottom: 30px;
+  }
+
+  & th {
+    vertical-align: middle;
+    font-weight: 300;
+  }
+
+  & .column-title {
+    padding: 12px 24px;
+    background-color: #dcdcdc;
+    border-radius: 30px;
+    width: min-content;
+    margin: 0 auto;
+  }
+
+  & td {
+    padding: 12px;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: baseline;
+  }
+
+  & .not-found {
+    text-align: left;
+    padding: 18px 0 0 56px;
+    font-size: 16px;
+  }
+}
+
+.scrollbar-track {
+  display: none;
+}
+
+.scrollbar-thumb {
+  display: none;
+}
+
+@media screen and (max-width: 660px) {
+  .scrollbar-track {
+    display: block;
+    width: 100%;
+    height: 8px;
+    background-color: #C3C3C3;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .scrollbar-thumb {
+    display: block;
+    height: 100%;
+    width: 84px;
+    background-color: #DCDCDC;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(0);
+    transition: transform 0.1s;
+  }
+}

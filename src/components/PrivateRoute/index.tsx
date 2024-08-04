@@ -1,22 +1,24 @@
 import React, { useContext, useEffect } from 'react';
-import { Navigate, useLocation, } from 'react-router-dom';
-import { LoginFormContext } from 'context/loginFormContext';
+
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 import { PathName } from 'constants/';
+import { AuthContext } from 'context/authContext';
 
 interface PrivateRouteProps {
   children: React.ReactNode;
 }
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
-  const { isAuthenticated, setOpenModal } = useContext(LoginFormContext);
+  const { isAuthenticated } = useContext(AuthContext)
   const location = useLocation();
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!isAuthenticated) {
-      setOpenModal(true);
+      navigate(PathName.Home, { state: { showLoginModal: true } });
     }
-  }, [isAuthenticated, setOpenModal]);
+  }, [isAuthenticated, navigate]);
 
   if (!isAuthenticated) {
     return <Navigate to={PathName.Home} state={{ from: location }} />;

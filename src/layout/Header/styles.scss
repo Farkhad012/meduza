@@ -14,6 +14,36 @@
     }
   }
 
+  &__buttons .currency {
+    margin: auto;
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__buttons .currency {
+      order: -1;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__buttons .currency {
+      display: none;
+    }
+  }
+
+  &__buttons .currency>p,
+  &__buttons .currency>span {
+    color: $logo-txt-color;
+  }
+
+  &__buttons .currency>p {
+    font-weight: 300;
+  }
+
+  &__buttons .currency>span {
+    font-weight: 400;
+  }
+
   &__container {
     padding: 53px 0;
     display: flex;
@@ -57,7 +87,7 @@
     position: relative;
     display: inline-block;
     border: none;
-    background-color: transparent;
+    background-color: $page-bg-color;
     color: $btn-txt-color;
     border-radius: 50%;
     overflow: hidden;
@@ -68,6 +98,12 @@
       width: 45px;
       height: 45px;
     }
+
+    &__button-round .account {
+      display: none;
+    }
+
+
   }
 
   &__button-round::before {
@@ -87,7 +123,15 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
+
+  @media screen and (max-width: 1024px) {
+    &__button-round::before {
+      display: none;
+    }
+  }
 }
+
+
 
 @media screen and (max-width: 1024px) {
   .header-support {

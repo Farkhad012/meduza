@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { NavLink } from 'react-router-dom';
 
@@ -7,33 +8,46 @@ import { lockout, popular, amneziaWG, overCloak } from 'assets/images/icons'
 import './styles.scss';
 
 export const ProtocolsContainer: React.FC = () => {
+  const { t } = useTranslation('protocols');
+
   return (
     <section id="protocols">
       <div className="protocols__container">
         <div className="protocols__items">
           <div className="protocols__item blur gradient-bg gradient-bg-bottom">
-            <img src={lockout}></img>
-            <p> Поддерживает современные протоколы <span> для обхода блокировок</span></p>
+            <img src={lockout} alt="lockout" />
+            <p className="protocols__item-text">
+              {t('Supports_modern_protocols_')}
+              <span>{t('To_bypass_blocks_')}</span>
+            </p>
           </div>
           <div className="protocols__item blur gradient-bg gradient-bg-bottom">
-            <img src={popular}></img>
-            <p> Популярные и надежные <span> OpenVPN и WireGuard.</span></p>
+            <img src={popular} alt="popular" />
+            <p className="protocols__item-text">
+              {t('Popular_and_reliable_')}
+              <span>{t('OpenVPN_and_WireGuard_')}</span>
+            </p>
           </div>
           <div className="protocols__item blur gradient-bg gradient-bg-bottom">
-            <img src={amneziaWG}></img>
-            <p> AmneziaWG с защитой от распознавания трафика<span> и производительностью  WireGuard.</span></p>
+            <img src={amneziaWG} alt="amneziaWG" />
+            <p className="protocols__item-text">
+              {t('AmneziaWG_with_traffic_recognition_protection_')}
+              <span>{t('And_WireGuard_performance_')}</span>
+            </p>
           </div>
           <div className="protocols__item blur gradient-bg gradient-bg-bottom">
-            <img src={overCloak}></img>
-            <p>
-              <span>OpenVPN over Cloak -</span>
-              работает даже там, где другие VPN не работают
-              <span>— в Китае, Иране и Туркменистане</span>
+            <img src={overCloak} alt="overCloak" />
+            <p className="protocols__item-text">
+              <span>{t('OpenVPN_over_Cloak_-_')}</span>
+              {t('Works_even_where_other_VPNs_don_t_')}
+              <span>{t('In_China_Iran_and_Turkmenistan_')}</span>
             </p>
           </div>
         </div>
-        <NavLink className="protocols__link" to="#supported-platforms">Список поддерживаемых протоколов по платформам</NavLink>
+        <NavLink className="protocols__link" to="#supported-platforms">
+          {t('List_of_supported_protocols_by_platform_')}
+        </NavLink>
       </div>
     </section>
-  )
+  );
 }

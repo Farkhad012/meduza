@@ -68,6 +68,45 @@
     }
   }
 
+  &__item-text {
+    max-width: 293px;
+    font-family: $secondary-font;
+    font-size: 20px;
+    color: $light-text-color;
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__item-text {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__item-text {
+      font-size: 16px;
+    }
+  }
+
+  &__item-text>span {
+    font-family: $secondary-font;
+    font-size: 20px;
+    color: $tight-text-color;
+    font-weight: 300;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__item-text>span {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__item-text>span {
+      font-size: 16px;
+    }
+  }
+
   &__item img {
     position: absolute;
     content: '';

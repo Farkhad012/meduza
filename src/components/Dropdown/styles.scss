@@ -1,0 +1,45 @@
+@import '/src/assets/styles/general.scss';
+
+.custom-dropdown {
+  outline: 1px solid $border-color;
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  color: $dark-text-color;
+
+  & .dropdown-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  & .dropdown-icon {
+    transition: transform 0.5s ease;
+  }
+
+  & .dropdown-header .dropdown-icon.open {
+    transform: rotate(180deg);
+  }
+
+  & .dropdown-header p {
+    display: inline;
+    width: 100%;
+  }
+
+  & .dropdown-list {
+    width: 100%;
+    outline: 1px solid $border-color;
+    border-radius: 15px;
+    position: absolute;
+    transform: translateY(20%);
+    left: 0;
+    z-index: 2;
+
+    &>li {
+      padding: 20px;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+}

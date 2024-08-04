@@ -8,7 +8,6 @@
   line-height: 1.3;
   color: $light-text-color;
   font-family: 'Gill Sans Nova';
-  font-weight: 600;
   border: none;
   outline: none;
   background-color: transparent;
@@ -38,4 +37,9 @@
 
 .button.white {
   background: white;
+
+}
+
+.border {
+  outline: 1px solid #5A7AB7;
 }

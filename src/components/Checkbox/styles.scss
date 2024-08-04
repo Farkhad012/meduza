@@ -1,0 +1,28 @@
+@import '/src/assets/styles/general.scss';
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  &__box {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+
+  &__text {
+    color: $dark-text-color;
+    margin-left: 30px;
+    font-size: 20px;
+  }
+}

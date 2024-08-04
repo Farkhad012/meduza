@@ -35,6 +35,25 @@
   z-index: -3;
 }
 
+h1 {
+  font-family: 'Unbounded Blond';
+  font-size: 54px;
+  line-height: 1.1;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 46px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+
 h2 {
   font-family: 'Unbounded Blond';
   font-size: 32px;
@@ -50,6 +69,22 @@ h2 {
 @media screen and (max-width: 768px) {
   h2 {
     font-size: 22px;
+  }
+}
+
+h4 {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 1024px) {
+  h4 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h4 {
+    font-size: 18px;
   }
 }
 
@@ -81,8 +116,7 @@ span {
   align-items: center;
 }
 
-.sign {
-
+.modal {
   &__container {
     background-color: white;
     width: 560px;
@@ -113,6 +147,10 @@ span {
     margin-top: 45px;
     font-family: 'Unbounded blond';
     color: $modal-text-color;
+  }
+
+  &__form-content>a {
+    font-weight: 300;
   }
 
   @media screen and (max-width: 1024px) {
@@ -148,7 +186,7 @@ span {
 
   &__form-item input {
     margin-top: 20px;
-    padding-left: 20px;
+    padding: 30px 20px;
     font-size: 20px;
     line-height: 1.1;
 
@@ -156,7 +194,28 @@ span {
     border-radius: 20px;
     width: 100%;
     height: 80px;
+    white-space: wrap;
+    white-space: pre-wrap;
   }
+
+  &__form-item textarea {
+    margin-top: 20px;
+    padding: 30px 20px;
+    font-size: 20px;
+    // line-height: 1.1;
+    resize: vertical;
+
+    outline: 1px solid $border-color;
+    border-radius: 20px;
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  &__form-item .text {
+    min-height: 214px;
+  }
+
 
   @media screen and (max-width: 1024px) {
     &__form-item input {
@@ -193,30 +252,25 @@ span {
     }
   }
 
-  &__form-content input[type="checkbox"] {
-    display: inline;
-    width: 20px;
-    height: 20px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    &__form-content input[type="checkbox"] {
-      width: 15px;
-      height: 15px;
-    }
-  }
-
   &__form-agreement {
     height: fit-content;
     margin-left: 22px;
     display: flex;
     gap: 20px;
     align-items: center;
+
+    & .custom-checkbox__text {
+      margin-left: 0;
+    }
   }
 
   &__form-agreement p {
     font-size: 16px;
-    font-weight: 300px;
+    font-weight: 300;
+  }
+
+  &__form-agreement a {
+    font-weight: 300;
   }
 
   @media screen and (max-width: 1024px) {
@@ -236,10 +290,14 @@ span {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 20px;
   }
 
-  @media screen and (max-width: 768px) {
+  &__form-footer>.button.purple {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 1024px) {
     &__form-footer {
       margin-top: 40px;
     }
@@ -255,6 +313,8 @@ span {
 
   &__form-footer-link {
     color: $secondary-text-color;
+    white-space: nowrap;
+    font-weight: bold;
   }
 
   &__form-footer p {

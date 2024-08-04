@@ -1,39 +1,56 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './styles.scss';
 
 export const FeaturesContainer: React.FC = () => {
+  const { t } = useTranslation('features');
+
   return (
     <section id="features">
       <div className="features__container">
         <div className="features__content circle-bg">
           <ul className="features__content-items blur gradient-bg gradient-bg-top ">
             <li className="features__content-item">
-              Максимальный
+              {t('Maximum_')}
               <br />
-              уровень
-              <span> приватности</span>
+              {t('Level_')}
+              <span>
+                {t('Of_privacy_')}
+              </span>
             </li>
             <li className="features__content-item">
-              Высокая
-              <span> защищенность
+              {t('High_')}
+              <span>
+                {t('Protection_')}
                 <br />
-                от блокировок</span>
+                {t('From_blocks_')}
+              </span>
             </li>
             <li className="features__content-item">
-              <span>Высокая скорость <br /> работы: </span>
-              более 24 <br />локаций серверов <br />по всему Миру
+              <span>
+              {t('High_speed_')}
+                <br />
+                {/* {t('')} */}
+              </span>
+              {t('More_than_24_')}
+              <br />
+              {t('Server_locations_')}
+              <br />
+              {t('Worldwide_')}
             </li>
             <li className="features__content-item">
-              Невысокая стоимость
+            {t('Low_cost_')}
             </li>
           </ul>
           <div className="guarantee">
-            <h5 className="guarantee__title">Передумали?</h5>
-            <h5 className="guarantee__text">
-              Ничего страшного! Полностью вернем деньги
-              <span> в течение первых 15 дней!</span>
-            </h5>
+            <h5 className="guarantee__title">{t('Changed_your_mind_')}</h5>
+            <p className="guarantee__text">
+            {t('No_problem_')}
+              <span>
+              {t('Within_the_first_15_days_')}
+              </span>
+            </p>
           </div>
         </div>
 

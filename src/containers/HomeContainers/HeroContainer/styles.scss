@@ -23,28 +23,23 @@
 
   &__title {
     margin-top: 20px;
-    font-family: 'Unbounded Blond';
-    font-size: 54px;
-    font-weight: normal;
     text-align: center;
-    line-height: 1.1;
   }
 
   @media screen and (max-width: 1024px) {
     &__title {
       margin-top: 16px;
-      font-size: 46px;
     }
   }
 
   @media screen and (max-width: 768px) {
     &__title {
       margin-top: 16px;
-      font-size: 28px;
     }
   }
 
   &__title>span {
+    font-family: inherit;
     display: block;
     color: $secondary-text-color;
   }

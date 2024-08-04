@@ -1,24 +1,28 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-import { PathName } from 'constants/';
+import { Notification, ContactSupport } from 'components';
 
-import { SetPasswordContainer, NavMenuContainer, DashboardContainer } from 'containers/UserAccountContainers';
+
 
 import './styles.scss';
 
-export const UserAccount: React.FC = () => {
+// interface UserAccountProps {
+//   color: 'purple' | 'blue' | 'white';
+//   text: string;
+//   textColor?: string;
+//   fontSize?: number;
+// }
 
-  const location = useLocation();
-  const currentPath = location.pathname;
+export const UserAccount: React.FC = () => {
+  const { t } = useTranslation('userAccount');
 
   return (
-    <section className="user-account">
-      <SetPasswordContainer />
-      <div className='user-account__content'>
-        <NavMenuContainer />
-        <DashboardContainer />
-      </div>
-    </section>
-  )
-}
+    <div className="user-account">
+      <Notification message={t('There_are_no_services_requiring_payment_and_extension_')} />
+      <Notification message={t('Payment_is_not_required_the_balance_is_sufficient_')} />
+      <Notification message={t('You_have_no_active_services_')} />
+      <ContactSupport />
+    </div>
+  );
+};

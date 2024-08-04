@@ -3,10 +3,10 @@
 .modal-paper {
   background-color: white;
   max-width: 760px;
+  max-height: 90vh;
   margin: 0 auto;
   height: max-content;
   border-radius: $border-radius;
-  // filter: drop-shadow(0 4px 4px black);
   padding: 76px 100px;
   position: relative;
 }
@@ -19,6 +19,7 @@
 
 @media screen and (max-width: 768px) {
   .modal-paper {
+    max-width: 340px;
     padding: 29px 20px;
   }
 }

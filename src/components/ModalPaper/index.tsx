@@ -1,11 +1,13 @@
 import React, { forwardRef } from 'react';
+
 import { Box } from '@mui/material';
 import { close } from 'assets/images/icons';
+
 import './styles.scss';
 
 interface ModalPaperProps {
-  children: React.ReactNode;
   handleClose: () => void;
+  children: React.ReactNode;
 }
 
 export const ModalPaper = forwardRef<HTMLDivElement, ModalPaperProps>(({ children, handleClose }, ref) => {

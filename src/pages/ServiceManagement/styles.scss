@@ -1,0 +1,64 @@
+@import '/src/assets/styles/general.scss';
+
+.service-management {
+
+  & #service-filter-form {
+    margin-top: 60px;
+
+    & .filters {
+      margin-top: 30px;
+      display: flex;
+      gap: 25px 20px;
+      flex-wrap: wrap;
+    }
+
+    & .filter-group input {
+      display: block;
+      margin-top: 20px;
+      outline: 1px solid $border-color;
+      border-radius: 15px;
+      // height: 70px;
+      padding: 25px;
+
+      font-family: $primary-font;
+      font-size: 16px;
+    }
+
+    & .filter-group #service-id {
+      width: 140px;
+    }
+
+    & .filter-group #service-tag {
+      width: 180px;
+    }
+
+    & .filter-group #service-location {
+      width: 280px;
+    }
+
+    & .filter-group #service-ip {
+      width: 240px;
+    }
+
+    & .filter-group label {
+      margin-top: 20px;
+      width: 280px;
+      color: $dark-text-color;
+      font-family: $primary-font;
+      font-weight: 300;
+    }
+
+    & .filter-group .custom-dropdown {
+      margin-top: 20px;
+      width: 280px;
+      padding: 25px;
+    }
+  }
+
+  & .table-wrapper {
+    margin-top: 74px;
+  }
+  
+
+
+}

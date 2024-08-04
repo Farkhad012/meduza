@@ -9,9 +9,9 @@ body, html, #root {
 
 body {
   margin: 0;
-  font-family: $primary-font, $secondary-font, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;  
+  accent-color: $secondary-text-color;
 }
 
 code {

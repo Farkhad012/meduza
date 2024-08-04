@@ -28,11 +28,14 @@ export { default as encryption } from './encryption.svg';
 // ProtocolsContainer -------------------------------------------------------------
 
 // SupportedPlatformsContainer  ---------------------------------------------------
-// export { default as router } from './router.svg';
-// export { default as macos } from './macos.svg';
-// export { default as windows } from './windows.svg';
-// export { default as android } from './android.svg';
-// export { default as linux } from './linux.svg';
+export { default as router } from './router.svg';
+export { default as macos } from './macos.svg';
+export { default as windows } from './windows.svg';
+export { default as android } from './android.svg';
+export { default as linux } from './linux.svg';
+export { default as check } from './check.svg';
+export { default as cross } from './cross.svg';
+export { default as arrowRight } from './arrow-right.svg';
 
 // Modal  -------------------------------------------------------------------------
 // export { default as check } from './check.svg';
@@ -41,3 +44,12 @@ export { default as close } from './close.svg';
 
 // Personal Account  --------------------------------------------------------------
 export { default as burgerIcon } from './burger-icon.svg';
+
+// Notification  --------------------------------------------------------------
+export { default as notificationCloseIcon } from './notification-close-icon.svg';
+
+// Dropdown  --------------------------------------------------------------
+export { default as dropdownArrow } from './Dropdown arrow.svg';
+
+// TopUpBalance  --------------------------------------------------------------
+export { default as PayPalLogo } from './PayPalLogo.svg';

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import { ModalContext } from 'context/ModalContext';
 
 import {
   HeroContainer,
@@ -13,6 +16,15 @@ import {
 import './styles.scss';
 
 export const HomePage: React.FC = () => {
+  const { state } = useLocation()
+  const { setOpenModal } = useContext(ModalContext);
+
+  useEffect(() => {
+    if (state && (state as any).showLoginModal) {
+      setOpenModal(true);
+    }
+  }, [state]);
+
   return (
     <>
       <HeroContainer />
