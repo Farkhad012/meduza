@@ -9,10 +9,10 @@
   &::before {
     content: "";
     position: absolute;
-    top: -200px;
-    left: -100px;
-    right: -100px;
-    bottom: -200px;
+    top: -180%;
+    left: -30%;
+    right: -30%;
+    bottom: -180%;
     background: radial-gradient(ellipse 40% 90% at 50% 0%, rgba(91, 120, 165, 0.5) 0%, rgba(27, 44, 70, 0.3) 100%);
     z-index: -1;
   }
@@ -113,7 +113,7 @@ span {
 .modal {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 .modal {
@@ -168,8 +168,10 @@ span {
   }
 
   &__form-item p {
+    font-family: $title-font;
     font-size: 20px;
     line-height: 1.1;
+    // font-weight: 300;
   }
 
   @media screen and (max-width: 1024px) {
@@ -185,9 +187,12 @@ span {
   }
 
   &__form-item input {
+    flex: 1 1 auto;
     margin-top: 20px;
+    font-family: $primary-font;
     padding: 30px 20px;
-    font-size: 20px;
+    font-size: 14px;
+    font-weight: 300;
     line-height: 1.1;
 
     outline: 1px solid $border-color;
@@ -201,9 +206,9 @@ span {
   &__form-item textarea {
     margin-top: 20px;
     padding: 30px 20px;
-    font-size: 20px;
+    font-size: 14px;
     // line-height: 1.1;
-    resize: vertical;
+    // resize: vertical;
 
     outline: 1px solid $border-color;
     border-radius: 20px;
@@ -228,6 +233,24 @@ span {
     &__form-item input {
       height: 60px;
     }
+  }
+
+  &__form-contacts {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-contacts {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__form-contacts>.modal__form-item {
+    flex: 1 1 50%;
+    width: 100%;
   }
 
   &__form-content>a {

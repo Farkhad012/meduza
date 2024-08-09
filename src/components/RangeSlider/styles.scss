@@ -1,0 +1,117 @@
+@import '/src/assets/styles/general.scss';
+
+.range-slider {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative; 
+}
+
+.slider {
+  width: 100%;
+  -webkit-appearance: none;
+  background: transparent; 
+}
+
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: transparent; 
+  border-radius: 50px; /* Скругление дорожки */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  outline: 1px solid $border-color;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -6px;
+  position: relative; /* Чтобы ползунок располагался над треком */
+  z-index: 1; /* Чтобы ползунок был поверх трека */
+  filter: drop-shadow(4px 4px 8px rgba(12, 17, 29, 0.1));
+}
+
+.slider::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background: transparent; 
+  border-radius: 50px; /* Скругление дорожки */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: white;
+  outline: 1px solid $border-color;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Стилизация меток */
+.slider-labels {
+  width: 110%;
+  transform: translateX(-25px);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 10px;
+
+  &-top {
+    margin-bottom: 25px;    
+  }
+
+  &-top span {
+    color: $secondary-text-color;
+    font-weight: 400;  
+  }
+
+  &-bottom {
+    margin-top: 25px;    
+  }
+
+  &-bottom span {
+    color: $modal-text-color;
+    font-weight: 300;  
+  }
+}
+
+.label {
+  text-align: center;
+}
+
+.slider-track-wrapper {
+  position: relative;
+  width: 99%; /* Установить ширину блока с линиями */
+  margin: 0 auto; /* Центрировать блок по ширине родителя */
+}
+
+.slider-track-lines {
+  position: absolute;
+  top: 50%; /* Позиционировать линии относительно центра трека */
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Чтобы линии не перекрывали ползунок */
+  transform: translateY(-50%); /* Центрирование по вертикали */
+}
+
+.track-line {
+  position: absolute;
+  width: 1px;
+  height: 10px; 
+  background-color: $border-color; 
+  transform: translateX(-50%); /* Центрирование линии по цифре */
+  transition: opacity 0.3s; /* Плавное изменение видимости */
+  top: 90%; /* Расположить линию ниже трека */
+}
+
+.track-line-inner {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Центрирование линии по цифре */
+  width: 1px;
+  height: 10px;
+  background-color: $border-color;
+}

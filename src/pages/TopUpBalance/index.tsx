@@ -9,11 +9,11 @@ import './styles.scss';
 
 export const TopUpBalance: React.FC = () => {
   const { t } = useTranslation('topUpBalance');
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState('Enter Promocode');
 
   return (
     <div className="top-up-balance">
-      <div className="amount-input">
+      <div className="promocode-input">
         <textarea
           value={amount}
           onChange={(e) => setAmount(e.target.value)}

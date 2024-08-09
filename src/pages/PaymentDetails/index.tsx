@@ -19,11 +19,10 @@ export const PaymentDetails: React.FC = () => {
   };
 
   const handleChangeClick = () => {
-    navigate(PathName.PaymentDetailsChange);
+    navigate(`/${PathName.AccountPage}/${PathName.PaymentDetailsChange}`);
   };
 
   const handleCheckboxChange = (type: string) => {
-    // Toggle between the current type and null (deselect if already selected)
     setSelectedType(selectedType === type ? null : type);
   };
 
@@ -74,7 +73,7 @@ export const PaymentDetails: React.FC = () => {
           color="blue"
           text={t('Change_')}
           textColor="white"
-        />
+        />        
       </div>
       <div className="payment-details__select-country">
         <DashboardSectionTitle text={t('Country_')} />

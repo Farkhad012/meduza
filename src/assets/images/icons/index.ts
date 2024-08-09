@@ -2,8 +2,9 @@
 // export { default as line } from './line.svg';
 
 // LocationContainer --------------------------------------------------------------
-// export { default as map } from './map.svg';
-// export { default as point } from './point.svg';
+export { default as point } from './point.svg';
+export { default as popoverClose } from './popoverClose.svg';
+
 
 // FeaturesContainer --------------------------------------------------------------
 // export { default as privacyLevel } from './privacy-level.svg';

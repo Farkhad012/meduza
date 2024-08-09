@@ -1,1 +1,311 @@
 @import '/src/assets/styles/general.scss';
+
+.order-container {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media screen and (max-width: 1024px) {
+  .order-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.order {
+  display: block;
+  width: 532px;
+  max-width: 100%;
+  height: 100%;
+  
+
+  h5 {
+    font-weight: 300;
+    margin-left: 28px;
+
+    span {
+      font-weight: 400;
+      color: $secondary-text-color;
+    }
+  }
+
+  h2 {
+    margin: 8.4px 0 0 28px;
+  }
+
+  & .custom-dropdown {
+    margin-top: 24.5px;
+    padding: 21px 28px;
+  }
+
+  .payment-period {
+    margin-top: 17.5px;
+    padding: 32.2px 28px;
+    background-color: $notification-bg-color;
+    border-radius: 14px;
+
+    &>h2 {
+      margin-left: 0;
+    }
+
+    &>div {
+      margin-top: 21px;
+    }
+  }
+
+  .promocode {
+    margin-top: 35px;
+  }
+
+  .promocode-input {
+    font-family: $primary-font;
+    color: $modal-text-color;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
+    margin-top: 14px;
+    padding: 8.4px 8.4px 8.4px 8.4px;
+    border-radius: 14px;
+    outline: 1px solid $border-color;
+
+    input {
+      width: 100%;
+      padding: 9.8px 9.8px 9.8px 19.6px;
+      font-weight: 300;
+      border: none;
+      font-size: 11.2px;
+      border-radius: 7px;
+      white-space: pre-wrap;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      textarea {
+        font-size: 9.8px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      textarea {
+        font-size: 8.4px;
+      }
+    }
+
+    button {
+      padding: 12.6px 50.4px;
+      outline: 1px solid $border-color;
+      font-size: 11.2px;
+      border-radius: 7px;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  }
+
+  .subscription {
+    margin: 50.4px 0 0 28px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 17.5px;
+    align-items: center;
+  
+    .priceboard {
+      max-width: 210px;
+      width: 100%;
+      font-weight: 300;
+      font-size: 22.4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .subscription-plan {
+      font-size: 9.8px;
+      font-weight: 300;
+    }
+  
+    .subscription-price {
+      font-family: $title-font;
+      font-size: 22.4px;
+    }
+  
+    &>button {
+      padding: 22.4px 44.8px;
+      white-space: nowrap;
+      align-self: center;
+    }
+  }
+
+  &__form-agreement {
+    height: fit-content;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin: 28px 0 0 28px;
+
+    & .custom-checkbox__text {
+      margin-left: 0;
+    }
+  }
+
+  &__form-agreement p {
+    font-size: 9.8px;
+    font-weight: 300;
+  }
+
+  &__form-agreement a {
+    font-weight: 300;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form-agreement p {
+      font-size: 9.8px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-agreement p {
+      font-size: 8.4px;
+    }
+  }
+
+  &>p {
+    font-size: 8.4px;
+    font-weight: 300;
+    max-width: 392px;
+    margin: 14px 28px 0;
+  }
+}
+
+
+.order-receipt {
+  width: 252px;
+  max-width: 100%;
+
+  .order-details {
+    margin-top: 24.5px;
+    padding: 28px 21px;
+    background: $notification-bg-color;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 17.5px;
+  }
+
+  .order-details__item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.8px;
+    font-weight: 300;
+    align-items: center;
+  }
+
+  .order-details__item>span {
+    font-family: $title-font;
+    max-width: 63px;
+    text-align-last: left;
+    line-height: 1.1;
+  }
+
+  .order-details__item>p {
+    font-size: 9.8px;
+    font-weight: 300;
+    text-align: right;
+  }
+
+  .subscription {
+    margin-top: 50.4px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 17.5px;
+    align-items: center;
+
+    .priceboard {
+      max-width: 210px;
+      width: 100%;
+      font-weight: 300;
+      font-size: 22.4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .subscription-plan {
+      font-size: 9.8px;
+      font-weight: 300;
+    }
+
+    .subscription-price {
+      font-family: $title-font;
+      font-size: 22.4px;
+    }
+
+    &>button {
+      padding: 22.4px 61.6px;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    &__form-agreement {
+      height: fit-content;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin: 17.5px 0 0 0;
+
+      & .custom-checkbox__text {
+        margin-left: 0;
+      }
+    }
+
+    &__form-agreement p {
+      font-size: 9.8px;
+      font-weight: 300;
+    }
+
+    &__form-agreement a {
+      font-weight: 300;
+    }
+  }
+
+  &__form-agreement {
+    height: fit-content;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin: 17.5px 0 0 0;
+
+    & .custom-checkbox__text {
+      margin-left: 0;
+    }
+  }
+
+  &__form-agreement p {
+    font-size: 9.8px;
+    font-weight: 300;
+  }
+
+  &__form-agreement a {
+    font-weight: 300;
+  }
+}
+
+
+.order-paper {
+  background-color: white;
+  // max-width: 760px;
+  // max-height: 90vh;
+  padding: 30px 20px;
+  min-height: 100%;
+  margin: 0 auto;
+  height: max-content;
+  border-radius: $border-radius;
+  position: relative;
+}

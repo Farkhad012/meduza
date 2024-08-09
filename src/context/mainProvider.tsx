@@ -5,6 +5,8 @@ import { AuthProvider } from './authContext';
 import { ModalProvider } from './ModalContext';
 import { BurgerProvider } from './burgerContext';
 import { NotificationProvider } from './notificationContext';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { OrderProvider } from './OrderContext';
 
 interface MainProviderProps {
   children: ReactNode;
@@ -13,15 +15,19 @@ interface MainProviderProps {
 export const MainProvider: React.FC<MainProviderProps> = ({ children }) => {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <ModalProvider>
-          <BurgerProvider>
-            <NotificationProvider>
-                {children}
-            </NotificationProvider>
-          </BurgerProvider>
-        </ModalProvider>
-      </AuthProvider>
+      <ParallaxProvider>
+        <AuthProvider>
+          <ModalProvider>
+            <OrderProvider>
+              <BurgerProvider>
+                <NotificationProvider>
+                  {children}
+                </NotificationProvider>
+              </BurgerProvider>
+            </OrderProvider>
+          </ModalProvider>
+        </AuthProvider>
+      </ParallaxProvider>
     </BrowserRouter>
   );
 };

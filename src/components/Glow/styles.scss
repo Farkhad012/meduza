@@ -1,0 +1,9 @@
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(15vw);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  background-color: #364579;
+  opacity: 1;
+}

@@ -1,1 +1,246 @@
 @import '/src/assets/styles/general.scss';
+
+
+.change {
+  &__container {
+    background-color: white;
+    width: 560px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__container {
+      width: 460px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__container {
+      width: 300px;
+    }
+  }
+
+  &__form-header {
+    padding: 0;
+  }
+
+  &__form-header h2 {
+    font-family: 'Unbounded';
+    font-weight: 500;
+  }
+
+  &__form-content {
+    margin-top: 45px;
+    font-family: 'Unbounded blond';
+    color: $modal-text-color;
+  }
+
+  &__form-content>a {
+    font-weight: 300;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form-content {
+      margin-top: 40px;
+    }
+  }
+
+  &__form-item {
+    margin-bottom: 30px;
+  }
+  
+  &__form-item p {
+    font-family: $title-font;
+    font-size: 20px;
+    line-height: 1.1;
+    // font-weight: 300;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    &__form-item p {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-item p {
+      font-size: 14px;
+    }
+  }
+  
+  &__form-item input {
+    flex: 1 1 auto;
+    margin-top: 20px;
+    font-family: $primary-font;
+    padding: 30px 20px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.1;
+    
+    outline: 1px solid $border-color;
+    border-radius: 20px;
+    width: 100%;
+    max-height: 70px;
+    white-space: wrap;
+    white-space: pre-wrap;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    &__form-item input {
+      padding: 24px 20px;
+      max-height: 55px;
+    }
+  }
+  
+  &__form-item .text {
+    min-height: 214px;
+  }
+
+
+  @media screen and (max-width: 1024px) {
+    &__form-item input {
+      margin-top: 16px;
+      height: 66px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-item input {
+      height: 60px;
+    }
+  }
+
+  &__form-contacts {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-contacts {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__form-contacts>.change__form-item {
+    flex: 1 1 50%;
+    width: 100%;
+  }
+
+  &__form-content>a {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.1;
+    width: 100%;
+    text-align: right;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form-content>a {
+      font-size: 14;
+      line-height: 1.1;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-content>a {
+      font-size: 12px;
+      line-height: 1.1;
+    }
+  }
+
+  &__form-agreement {
+    height: fit-content;
+    margin-left: 22px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    & .custom-checkbox__text {
+      margin-left: 0;
+    }
+  }
+
+  &__form-agreement p {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  &__form-agreement a {
+    font-weight: 300;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form-agreement p {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-agreement p {
+      font-size: 12px;
+    }
+  }
+
+  &__form-footer {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__form-footer>.button.purple {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__form-footer {
+      margin-top: 40px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-footer {
+      margin-top: 35px;
+      gap: 20px;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__form-footer-link {
+    color: $secondary-text-color;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  &__form-footer p {
+    font-family: 'Unbounded blond';
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: right;
+    white-space: wrap;
+    width: 200px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-footer p {
+      font-size: 12px;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+
+  &__form-footer button {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__form-footer button {
+      width: 100%;
+      height: 70px;
+    }
+  }
+
+}

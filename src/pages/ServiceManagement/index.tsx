@@ -15,15 +15,17 @@ interface Service {
   status?: string;
 }
 
-const columns = [
-  { key: 'id', label: 'ID' },
-  { key: 'name', label: 'Name' },
-  { key: 'period', label: 'Period' },
-  { key: 'plan', label: 'Plan' }
-];
-
 export const ServiceManagement: React.FC = () => {
   const { t } = useTranslation('serviceManagement');
+
+  
+const columns = [
+  { key: 'id', label: t('ID_') },
+  { key: 'name', label: t('Name_') },
+  { key: 'period', label: t('Period_') },
+  { key: 'plan', label: t('Plan_') }
+];
+
 
   const [filters, setFilters] = useState({
     id: '',

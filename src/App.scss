@@ -6,11 +6,14 @@
   color: $light-text-color;
   background-repeat: no-repeat;
   overflow: hidden;
-  position: relative;
+  // position: relative;
+  z-index: -99;
 }
 
 .container {
   width: 100%;
+  position: relative;
+  // z-index: 99;
 }
 
 .wrapper {  
@@ -20,6 +23,7 @@
   background-repeat: no-repeat;
   margin: 0 auto;
   padding: 0 24px;
+  z-index: 10;
 }
 
 @media screen and (max-width: 1024px) {

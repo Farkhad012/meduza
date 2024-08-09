@@ -18,13 +18,13 @@ interface Ticket {
   updatedDate: string;
 }
 
-const columns = [
-  { key: 'id', label: 'ID' },
-  { key: 'topic', label: 'Name' },
-  { key: 'status', label: 'Status' },
-  { key: 'createdDate', label: 'Created' },
-  { key: 'updatedDate', label: 'Updated' }
-];
+// const columns = [
+//   { key: 'id', label: 'ID' },
+//   { key: 'topic', label: 'Name' },
+//   { key: 'status', label: 'Status' },
+//   { key: 'createdDate', label: 'Created' },
+//   { key: 'updatedDate', label: 'Updated' }
+// ];
 
 export const AllTickets: React.FC = () => {
   const { t } = useTranslation('allTickets');
@@ -32,11 +32,11 @@ export const AllTickets: React.FC = () => {
   const { openModal, setOpenModal } = useContext(ModalContext);
 
   const columns = [
-    { key: 'id', label: '"ID"' },
-    { key: 'topic', label: 'Name' },
-    { key: 'status', label: 'Status' },
-    { key: 'createdDate', label: 'Created' },
-    { key: 'updatedDate', label: 'Updated' }
+    { key: 'id', label: t('ID_') },
+    { key: 'topic', label: t("Name_") },
+    { key: 'status', label: t('Status_') },
+    { key: 'createdDate', label: t('Created_') },
+    { key: 'updatedDate', label: t('Updated_') }
   ];
 
   const handleOpenCreateTicket = () => {
@@ -53,10 +53,10 @@ export const AllTickets: React.FC = () => {
     <div className="all-tickets">
       <div className="all-tickets__header">
         <p className="contact-support">
-        {t('All_processing_of_your_')}
+          {t('All_processing_of_your_')}
           <br />
           {t('applications_will_appear_here_')}
-          </p>
+        </p>
         <Button
           onClick={handleOpenCreateTicket}
           text={t('New_ticket_')}

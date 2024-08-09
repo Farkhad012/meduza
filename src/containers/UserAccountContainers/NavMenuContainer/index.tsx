@@ -21,7 +21,7 @@ export const NavMenuContainer: React.FC = () => {
   const { t } = useTranslation('burgerMenu');
   const burgerContext = useContext(BurgerContext);
   const { openModal, setOpenModal } = useContext(ModalContext);
-  const { setIsAuthenticated} = useContext(AuthContext)
+  const { setIsAuthenticated } = useContext(AuthContext)
 
 
   const handleToggleMenu = () => {
@@ -70,7 +70,7 @@ export const NavMenuContainer: React.FC = () => {
               <NavLink onClick={handleToggleMenu} to={PathName.AllTickets}>
                 {t('All_tickets_')}
               </NavLink>
-              <button onClick={handleOpenCreateTicket}>
+              <button onClick={handleOpenCreateTicket} className={`${openModal && "active"}`}>
                 {t('Create_ticket_')}
               </button>
             </div>

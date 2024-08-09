@@ -40,7 +40,7 @@ export const DashboardTable: React.FC<DashboardTableProps> = ({ columns, content
 
     if (scrollContainer) {
       scrollContainer.addEventListener('scroll', handleScroll);
-      handleScroll(); // Инициализация ползунка
+      handleScroll();
 
       return () => {
         scrollContainer.removeEventListener('scroll', handleScroll);

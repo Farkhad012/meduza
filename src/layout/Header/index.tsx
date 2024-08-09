@@ -8,11 +8,12 @@ import { ModalContext } from 'context/ModalContext';
 import { BurgerContext } from 'context/burgerContext';
 
 import { SignUp, SignIn } from 'pages';
-import { Logo, ModalPaper } from 'components';
 import { Modal } from '@mui/material';
 
 import { AuthContext } from 'context/authContext';
 import { LangMenu } from 'components/LangMenu';
+
+import { Logo, ModalPaper, Glow } from 'components';
 
 import './styles.scss';
 
@@ -47,6 +48,12 @@ export const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="container">
+        {currentPath === PathName.Home && (
+          <>
+            <Glow top="0px" left="50%" height="20vw" width="40vw" />
+          </>
+        )}
+
         <div className={`wrapper " ${currentPath === PathName.Home ? "landing" : "account"}`}>
           <div className="header__container">
             {currentPath === PathName.Home ? (

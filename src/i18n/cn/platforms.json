@@ -1,0 +1,19 @@
+{
+  "Windows_": "Windows",
+  "Macos_": "MacOS",
+  "Linux_": "Linux",
+  "Android_": "Android",
+  "Ios_": "iOS",
+  "Router_": "Router",
+  "Openvpn_": "OpenVPN",
+  "Wireguard_": "Wireguard",
+  "Amnesiawg_": "AmnesiaWG",
+  "Openvpn_over_cloak_": "OpenVPN over Cloak",
+  "Openvpn_shadowsocks_": "OpenVPN ShadowSocks",
+  "Ipsec_ikev2_": "IPsec (IKEv2)",
+  "Sftp_": "SFTP",
+  "Website_in_tor_": "Website in TOR",
+  "Own_dns_": "Own DNS",
+  "In_release_": "In release",
+  "Not_planned_to_be_developed_": "Not planned to be developed"
+}

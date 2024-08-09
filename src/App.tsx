@@ -1,3 +1,4 @@
+// App.tsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
@@ -15,25 +16,31 @@ import {
   PaymentsHistory,
   ServiceManagement,
   TopUpBalance,
-  AllTickets
+  AllTickets,
 } from 'pages';
 
 import {
   PrivateRoute,
-  
+  Glow,
 } from 'components';
 
 import './App.scss';
 
 function App() {
   return (
-    <div className="app">
+    <div className="app balls-paper">
       <Routes>
         <Route path={PathName.Home} element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path={PathName.LoginPasswordChange} element={<LoginPasswordChange />} />          
-          
-          <Route path={PathName.AccountPage} element={<PrivateRoute><AccountPage /></PrivateRoute>}>
+          <Route path={PathName.LoginPasswordChange} element={<LoginPasswordChange />} />
+          <Route
+            path={PathName.AccountPage}
+            element={
+              <PrivateRoute>
+                <AccountPage />
+              </PrivateRoute>
+            }
+          >
             <Route index element={<UserAccount />} />
             <Route path={PathName.LoginPasswordChange} element={<LoginPasswordChange />} />
             <Route path={PathName.Order} element={<Order />} />
@@ -46,7 +53,6 @@ function App() {
             <Route path={PathName.AllTickets} element={<AllTickets />} />
           </Route>
         </Route>
-
       </Routes>
     </div>
   );
