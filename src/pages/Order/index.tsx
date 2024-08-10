@@ -28,12 +28,12 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
         
       >
         <div className="order order-paper">
-          <h5>
+          <h3>
             Your best location is
             <span>
               DataLine (Tier-3).
             </span>
-          </h5>
+          </h3>
           <DashboardSectionTitle text='Choose another location:' />
 
           <Dropdown

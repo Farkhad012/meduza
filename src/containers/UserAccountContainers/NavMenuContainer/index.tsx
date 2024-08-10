@@ -55,17 +55,17 @@ export const NavMenuContainer: React.FC = () => {
         <div className="nav__container-content">
           <div className="balance">{t('My_balance')}: $0.00</div>
           <div className="service-order">
-            <h5>
+            <h3>
               {t('Service_order_')}
-            </h5>
+            </h3>
             <Button color="purple" text="+ VPN" fontSize={16} />
           </div>
         </div>
         <div className="nav__menu">
           <div className="nav__menu-block support">
-            <h5>
+            <h3>
               {t('Technical_support_')}
-            </h5>
+            </h3>
             <div className="nav__menu-links">
               <NavLink onClick={handleToggleMenu} to={PathName.AllTickets}>
                 {t('All_tickets_')}
@@ -76,9 +76,9 @@ export const NavMenuContainer: React.FC = () => {
             </div>
           </div>
           <div className="nav__menu-block management">
-            <h5>
+            <h3>
               {t('Service_management_')}
-            </h5>
+            </h3>
             <div className="nav__menu-links">
               <NavLink onClick={handleToggleMenu} to={PathName.ServiceManagement}>
                 {t('Payment_and_extension_of_services_')}
@@ -89,9 +89,9 @@ export const NavMenuContainer: React.FC = () => {
             </div>
           </div>
           <div className="nav__menu-block payments">
-            <h5>
+            <h3>
               {t('Payments_')}
-            </h5>
+            </h3>
             <div className="nav__menu-links">
               <NavLink onClick={handleToggleMenu} to={PathName.PaymentsHistory}>
                 {t('Payment_history_')}
@@ -102,9 +102,9 @@ export const NavMenuContainer: React.FC = () => {
             </div>
           </div>
           <div className="nav__menu-block account">
-            <h5>
+            <h3>
               {t('Account_')}
-            </h5>
+            </h3>
             <div className="nav__menu-links">
               <NavLink onClick={handleToggleMenu} to={PathName.PaymentDetails}>
                 {t('Payment_details_')}

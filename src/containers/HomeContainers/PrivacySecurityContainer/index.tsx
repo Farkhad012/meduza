@@ -33,9 +33,9 @@ export const PrivacySecurityContainer: React.FC = () => {
               <img src={logs} alt="logs-icon" />
             </div>
             <div className="privacy__content-text">
-              <h4>
+              <h3>
                 {t('Does_not_keep_logs_')}
-              </h4>
+              </h3>
               <p>
                 {t('A_separate_container_is_launched_for_each_vpn_protocol_They_can_be_deleted_with_one_click_They_do_not_write_logs_inside_themselves_and_do_nothing_other_than_their_direct_task_')}
               </p>
@@ -46,9 +46,9 @@ export const PrivacySecurityContainer: React.FC = () => {
               <img src={encryption} alt="encryption-icon" />
             </div>
             <div className="privacy__content-text">
-              <h4>
+              <h3>
                 {t('Uses_smart_encryption_')}
-              </h4>
+              </h3>
               <p>
                 {t('When_connecting_the_client_generates_a_new_key_and_a_new_security_certificate_and_sends_it_to_the_server_')}
               </p>

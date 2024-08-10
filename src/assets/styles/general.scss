@@ -37,39 +37,20 @@
 
 h1 {
   font-family: 'Unbounded Blond';
-  font-size: 54px;
+  font-size: clamp(1.75rem, 1.1347rem + 2.5243vw, 3.375rem);
   line-height: 1.1;
   font-weight: normal;
 }
 
-@media screen and (max-width: 1024px) {
-  h1 {
-    font-size: 46px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 28px;
-  }
-}
 
 h2 {
   font-family: 'Unbounded Blond';
-  font-size: 32px;
+  font-size: clamp(1.375rem, 1.1383rem + 0.9709vw, 2rem);
   line-height: 1.2;
 }
 
-@media screen and (max-width: 1024px) {
-  h2 {
-    font-size: 28px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  h2 {
-    font-size: 22px;
-  }
+h3 {
+  font-size: clamp(1.125rem, 1.0303rem + 0.3883vw, 1.375rem);
 }
 
 h4 {
@@ -90,7 +71,7 @@ h4 {
 
 h5 {
   font-family: 'Unbounded';
-  font-size: 22px;
+  font-size: clamp(1.125rem, 1.0303rem + 0.3883vw, 1.375rem);
   line-height: 1.1;
 }
 

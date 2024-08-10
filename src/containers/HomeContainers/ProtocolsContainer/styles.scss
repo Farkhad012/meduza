@@ -43,68 +43,39 @@
   }
 
   &__item {
-    width: 400px;
+    width: clamp(18.75rem, 16.3835rem + 9.7087vw, 25rem);
     overflow: hidden;
     padding: 45px 57px 44px 40px;
     border-radius: 25px;
-    font-size: 20px;
     line-height: 1.3;
     position: relative;
   }
 
   @media screen and (max-width: 1024px) {
     &__item {
-      width: 300px;
       padding: 28px 54px 27px 30px;
-      font-size: 18px;
     }
   }
 
   @media screen and (max-width: 768px) {
     &__item {
-      width: 300px;
       padding: 31px 93px 30px 30px;
-      font-size: 18px;
     }
   }
 
   &__item-text {
-    max-width: 293px;
+    max-width: clamp(12.875rem, 10.5795rem + 9.4175vw, 18.9375rem);
     font-family: $secondary-font;
-    font-size: 20px;
+    font-size: clamp(1rem, 0.9053rem + 0.3883vw, 1.25rem);
     color: $light-text-color;
     font-weight: 400;
   }
 
-  @media screen and (max-width: 1024px) {
-    &__item-text {
-      font-size: 18px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    &__item-text {
-      font-size: 16px;
-    }
-  }
-
   &__item-text>span {
     font-family: $secondary-font;
-    font-size: 20px;
+    font-size: 1em;
     color: $tight-text-color;
     font-weight: 300;
-  }
-
-  @media screen and (max-width: 1024px) {
-    &__item-text>span {
-      font-size: 18px;
-    }
-  }
-
-  @media screen and (max-width: 1024px) {
-    &__item-text>span {
-      font-size: 16px;
-    }
   }
 
   &__item img {
@@ -126,23 +97,11 @@
 
   &__link {
     font-family: $secondary-font;
-    font-size: 18px;
+    font-size: clamp(0.75rem, 0.608rem + 0.5825vw, 1.125rem);
     line-height: 1.3;
     font-weight: 300;
     text-decoration-line: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    &__link {
-      font-size: 14px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    &__link {
-      font-size: 12px;
-    }
   }
 }

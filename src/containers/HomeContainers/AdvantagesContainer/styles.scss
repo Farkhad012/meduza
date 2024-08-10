@@ -48,22 +48,9 @@
 
   &__item h3 {
     margin-top: 20px;
-    font-size: 22px;
     line-height: 1.2;
   }
   
-  @media screen and (max-width: 1024px) {
-    &__item h3 {
-      font-size: 20px;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    &__item h3 {
-      font-size: 18px;
-    }
-  }
-
   &__item:nth-child(1) h3 {
     width: 240px;
   }
@@ -95,23 +82,16 @@
     color: $tight-text-color;
     letter-spacing: 0.2px;
     width: 300px;
-    font-size: 20px;
+    font-size: clamp(1rem, 0.9053rem + 0.3883vw, 1.25rem);
     display: block;
     margin-top: 15px;
     line-height: 1.2;
     font-weight: 300;
   }
 
-  @media screen and (max-width: 1024px) {
-    &__item span {
-      font-size: 18px;
-    }
-  }
-
   @media screen and (max-width: 768px) {
     &__item span {
       width: 250px;
-      font-size: 16px;
       margin-top: 10px;
     }
   }
