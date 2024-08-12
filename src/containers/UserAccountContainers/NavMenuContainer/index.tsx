@@ -23,27 +23,20 @@ export const NavMenuContainer: React.FC = () => {
   const { openModal, setOpenModal } = useContext(ModalContext);
   const { setIsAuthenticated } = useContext(AuthContext)
 
-
   const handleToggleMenu = () => {
     burgerContext.setIsBurgerOpen(!burgerContext.isBurgerOpen);
   }
 
-  const handleOpenCreateTicket = () => {
-    console.log('Opening Create Ticket Modal');
-    setOpenModal('createTicket');
-  };
-
-  const handleClose = () => {
-    console.log('Closing Create Ticket Modal');
-    setOpenModal(null);
-  };
-
-  const handleToggle = () => {
-    setOpenModal('order');
-  }
-
   const handleLogout = () => {
     setIsAuthenticated(false);
+  }
+
+  const handleToggleTicket = () => {
+    openModal === null ? setOpenModal("createTicket") : setOpenModal(null);
+  }
+
+  const handleToggleOrder = () => {
+    openModal === null ? setOpenModal("order") : setOpenModal(null);
   }
 
   return (
@@ -62,7 +55,7 @@ export const NavMenuContainer: React.FC = () => {
             <h3>
               {t('Service_order_')}
             </h3>
-            <Button onClick={handleToggle} color="purple" text="+ VPN" fontSize={16} />
+            <Button onClick={handleToggleOrder} color="purple" text="+ VPN" fontSize={16} />
           </div>
         </div>
         <div className="nav__menu">
@@ -74,7 +67,7 @@ export const NavMenuContainer: React.FC = () => {
               <NavLink onClick={handleToggleMenu} to={PathName.AllTickets}>
                 {t('All_tickets_')}
               </NavLink>
-              <button onClick={handleOpenCreateTicket} className={`${openModal && "active"}`}>
+              <button onClick={handleToggleTicket} className={`${openModal && "active"}`}>
                 {t('Create_ticket_')}
               </button>
             </div>
@@ -134,11 +127,11 @@ export const NavMenuContainer: React.FC = () => {
         }}
         className="modal"
         open={openModal === 'createTicket'}
-        onClose={handleClose}
+        onClose={handleToggleTicket}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <ModalPaper handleClose={handleClose}>
+        <ModalPaper handleClose={handleToggleTicket}>
           <CreateTicket />
         </ModalPaper>
       </Modal>
@@ -155,12 +148,12 @@ export const NavMenuContainer: React.FC = () => {
         }}
         className="modal"
         open={openModal === 'order'}
-        onClose={handleClose}
+        onClose={handleToggleOrder}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Order
-          toggleForm={handleClose}
+          toggleForm={handleToggleOrder}
         />
       </Modal>
 

@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Modal } from '@mui/material';
 
-import { OrderContext } from 'context/OrderContext';
+import { ModalContext } from 'context/ModalContext';
 
-import { Button, Logo, ModalPaper } from 'components/';
+import { Button, Logo } from 'components/';
 
 import { Order } from 'pages';
 
@@ -12,10 +12,10 @@ import './styles.scss';
 
 export const HeroContainer: React.FC = () => {
   const { t } = useTranslation('hero');
-  const { openModal, setOpenModal } = useContext(OrderContext);
+  const { openModal, setOpenModal } = useContext(ModalContext);
 
   const handleToggle = () => {
-    setOpenModal(!openModal);
+    openModal === null ? setOpenModal("order") : setOpenModal(null);    
   }
 
   return (
@@ -47,7 +47,7 @@ export const HeroContainer: React.FC = () => {
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-          <Order            
+          <Order
             toggleForm={handleToggle}
           />
         </Modal>
