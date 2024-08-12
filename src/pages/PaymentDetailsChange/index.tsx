@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from 'components';
 
@@ -38,6 +39,7 @@ interface FormData {
 }
 
 export const PaymentDetailsChange: React.FC = () => {
+  const { t } = useTranslation('paymentDetailsChange');
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     dateOfBirth: '',
@@ -60,7 +62,7 @@ export const PaymentDetailsChange: React.FC = () => {
     <>
       <div className="change__form-content">
         <InputField
-          label="Full name"
+          label={t('Full_name_')}
           type="text"
           name="fullName"
           value={formData.fullName}
@@ -68,7 +70,7 @@ export const PaymentDetailsChange: React.FC = () => {
           required
         />
         <InputField
-          label="Date of Birth"
+          label={t('Date_of_birth_')}
           type="text"
           name="dateOfBirth"
           value={formData.dateOfBirth}
@@ -76,7 +78,7 @@ export const PaymentDetailsChange: React.FC = () => {
           required
         />
         <InputField
-          label="Passport data"
+          label={t('Passport_data_')}
           type="text"
           name="passportData"
           value={formData.passportData}
@@ -84,7 +86,7 @@ export const PaymentDetailsChange: React.FC = () => {
           required
         />
         <InputField
-          label="Mailing address"
+          label={t('Mailing_address_')}
           type="text"
           name="mailingAddress"
           value={formData.mailingAddress}
@@ -92,7 +94,7 @@ export const PaymentDetailsChange: React.FC = () => {
           required
         />
         <InputField
-          label="Postcode"
+          label={t('Postcode_')}
           type="text"
           name="postcode"
           value={formData.postcode}
@@ -101,7 +103,7 @@ export const PaymentDetailsChange: React.FC = () => {
         />
         <div className="change__form-contacts">
           <InputField
-            label="Phone Number"
+            label={t('Phone_number_')}
             type="tel"
             name="phoneNumber"
             value={formData.phoneNumber}
@@ -109,14 +111,14 @@ export const PaymentDetailsChange: React.FC = () => {
             required
           />
           <InputField
-            label="Email"
+            label={t('Email_')}
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
           />
         </div>
-        <Button text='save information' color='purple' width={100}/>
+        <Button text={t('Save_information_')} color='purple' width={100}/>
       </div>
     </>
   );

@@ -118,7 +118,7 @@ span {
     color: $modal-text-color;
     display: flex;
     flex-direction: column;
-    // gap: clamp(1.5rem, 1.358rem + 0.5825vw, 1.875rem);
+    gap: clamp(1.5rem, 1.358rem + 0.5825vw, 1.875rem);
   }
 
   &__form-content>a {
@@ -309,7 +309,7 @@ span {
     &__form-footer p {
       width: 100%;
       text-align: center;
-      white-space: nowrap;
+      white-space: pre-wrap;
     }
   }
 

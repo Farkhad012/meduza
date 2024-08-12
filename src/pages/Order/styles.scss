@@ -123,7 +123,7 @@
     margin-left: clamp(1.25rem, 0.8565rem + 1.8519vw, 2.5rem);
 
     .subscription {
-      margin-top: clamp(1rem, 0.9527rem + 0.1942vw, 1.125rem);;
+      margin-top: clamp(1rem, 0.9527rem + 0.1942vw, 1.125rem);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -167,7 +167,7 @@
       .subscription {
         margin: 30px 0 0 0;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
 
         &>button {
           padding: 22.4px 44.8px;
@@ -179,6 +179,12 @@
     }
 
 
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__footer {
+      margin-left: 0;
+    }
   }
 
   &__form-agreement {
@@ -335,7 +341,7 @@
     .subscription {
       margin: 30px 0 0 0;
       flex-direction: column;
-      align-items: start;
+      align-items: center;
 
       .priceboard {
         max-width: 210px;
