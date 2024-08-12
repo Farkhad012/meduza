@@ -12,4 +12,5 @@ export * from './Glow'
 export * from './Circle'
 export * from './SpriteAnimation'
 export * from './RangeSlider'
+export * from './LangMenu'
 

@@ -3,19 +3,18 @@
 
 .sprite-animation {
   position: absolute;
-  // background-image: url(/assets/images/jellyfish/spritesheet2.png);
+  background-image: url(/assets/images/jellyfish/spritesheet2.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
-  filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.7));
   animation: glow 1.5s infinite alternate;
 
   @keyframes glow {
     from {
-      filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.7));
+      filter: drop-shadow(0 0 25px rgba(81, 20, 215, 0.7));
     }
     to {
-      filter: drop-shadow(0 0 25px rgba(0, 150, 255, 1));
+      filter: drop-shadow(0 0 35px rgb(179, 30, 228));
     }
   }
 }

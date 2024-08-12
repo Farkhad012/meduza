@@ -33,11 +33,12 @@ export const HeroContainer: React.FC = () => {
 
         <Modal
           sx={{
+            maxHeight: '100%',
             display: 'flex',
-            alignItems: 'flex-start', // Выравнивание содержимого по началу (сверху)
-            justifyContent: 'center', // Центрирование по горизонтали
-            marginTop: '5vh', // Отступ сверху 10% от высоты экрана
-            marginBottom: '5vh', // Отступ сверху 10% от высоты экрана
+            // alignItems: window.innerHeight > 800 ? "center" : "flex-start",
+            justifyContent: 'center',
+            marginLeft: '5vw',
+            marginRight: '5vw',
             overflowY: 'auto',
           }}
           className="modal"
@@ -46,7 +47,9 @@ export const HeroContainer: React.FC = () => {
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-          <Order toggleForm={handleToggle} />
+          <Order            
+            toggleForm={handleToggle}
+          />
         </Modal>
 
       </div>

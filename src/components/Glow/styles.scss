@@ -1,9 +1,12 @@
 .glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(15vw);
+  -webkit-backdrop-filter: blur(14px);
+  filter: blur(14vw);
   transform: translate(-50%, -50%);
   z-index: 0;
   background-color: #364579;
   opacity: 1;
+  will-change: filter;
+  pointer-events: none;
 }

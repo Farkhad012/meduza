@@ -1,11 +1,13 @@
 {
-  "All_processing_of_your_": " All processing of your ",
-  "applications_will_appear_here_": " applications will appear here. ",
-  "New_ticket_": " new ticket ",
-  "ID_": " ID ",
-  "Name_": " Name ",
-  "Status_": " Status ",
-  "Created_": " Created ",
-  "Updated_": " Updated ",
-  "No_tickets_found_": " No tickets found "
+  "There_are_no_services_requiring_payment_and_extension_": " 没有需要付款和延期的服务。 ",
+  "Payment_is_not_required_the_balance_is_sufficient_": " 不需要付款，余额充足。",
+  "All_processing_of_your_": "您的所有",
+  "applications_will_appear_here_": "申请处理将显示在此处。",
+  "New_ticket_": "新申请",
+  "ID_": "ID",
+  "Name_": "名称",
+  "Status_": "状态",
+  "Created_": "创建时间",
+  "Updated_": "更新时间",
+  "No_tickets_found_": "未找到申请"
 }

@@ -1,10 +1,10 @@
 {
-  "Your_privacy_is_a_": " Your privacy is a ",
-  "Priority_": " priority",
-  "You_fully_control_your_data_": " You fully control your data.",
-  "The_application_does_not_collect_or_transmit_any_statistics_logs_or_other_information_about_users_and_their_data_": " The application does not collect or transmit any statistics, logs, or other information about users and their data.",
-  "Does_not_keep_logs_": " Does not keep logs",
-  "A_separate_container_is_launched_for_each_vpn_protocol_They_can_be_deleted_with_one_click_They_do_not_write_logs_inside_themselves_and_do_nothing_other_than_their_direct_task_": " A separate container is launched for each VPN protocol. They can be deleted with one click. They do not write logs inside themselves, and do nothing other than their direct task.",
-  "Uses_smart_encryption_": " Uses smart encryption",
-  "When_connecting_the_client_generates_a_new_key_and_a_new_security_certificate_and_sends_it_to_the_server_": " When connecting, the client generates a new key and a new security certificate and sends it to the server"
+  "Your_privacy_is_a_": " 您的隐私是 ",
+  "Priority_": " - 重中之重 ",
+  "You_fully_control_your_data_": " 您完全控制您的数据。",
+  "The_application_does_not_collect_or_transmit_any_statistics_logs_or_other_information_about_users_and_their_data_": " 该应用程序不会收集或传输有关用户及其数据的任何统计数据、日志或其他信息。",
+  "Does_not_keep_logs_": "不保存日志",
+  "A_separate_container_is_launched_for_each_vpn_protocol_They_can_be_deleted_with_one_click_They_do_not_write_logs_inside_themselves_and_do_nothing_other_than_their_direct_task_": " 为每个 VPN 协议启动一个单独的容器。它们可以一键删除。他们不在内部写入日志，除了直接任务之外不执行任何操作。",
+  "Uses_smart_encryption_": " 使用智能加密。 ",
+  "When_connecting_the_client_generates_a_new_key_and_a_new_security_certificate_and_sends_it_to_the_server_": " 连接时，客户端生成新的密钥和新的安全证书并发送给服务器。 "
 }

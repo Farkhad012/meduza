@@ -77,8 +77,8 @@ const columns = [
 
   return (
     <div className="service-management">
-      <Notification message="There are no services requiring payment and extension" />
-      <Notification message="Payment is not required, the balance is sufficient." />
+      <Notification message={t('There_are_no_services_requiring_payment_and_extension_')} />
+      <Notification message={t('Payment_is_not_required_the_balance_is_sufficient_')} />
       <form id="service-filter-form">
         <DashboardSectionTitle text={t('All_services_')} />
         <div className="filters">

@@ -1,23 +1,24 @@
 @import '/src/assets/styles/general.scss';
 
 .range-slider {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  position: relative; 
+  position: relative;
 }
 
 .slider {
   width: 100%;
   -webkit-appearance: none;
-  background: transparent; 
+  background: transparent;
 }
 
 .slider::-webkit-slider-runnable-track {
   width: 100%;
   height: 8px;
-  background: transparent; 
-  border-radius: 50px; /* Скругление дорожки */
+  background: transparent;
+  border-radius: 50px;
+  /* Скругление дорожки */
 }
 
 .slider::-webkit-slider-thumb {
@@ -29,16 +30,19 @@
   border-radius: 50%;
   cursor: pointer;
   margin-top: -6px;
-  position: relative; /* Чтобы ползунок располагался над треком */
-  z-index: 1; /* Чтобы ползунок был поверх трека */
+  position: relative;
+  /* Чтобы ползунок располагался над треком */
+  z-index: 1;
+  /* Чтобы ползунок был поверх трека */
   filter: drop-shadow(4px 4px 8px rgba(12, 17, 29, 0.1));
 }
 
 .slider::-moz-range-track {
   width: 100%;
   height: 8px;
-  background: transparent; 
-  border-radius: 50px; /* Скругление дорожки */
+  background: transparent;
+  border-radius: 50px;
+  /* Скругление дорожки */
 }
 
 .slider::-moz-range-thumb {
@@ -52,65 +56,75 @@
 
 /* Стилизация меток */
 .slider-labels {
-  width: 110%;
-  transform: translateX(-25px);
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  // gap: clamp(0.75rem, 0.2778rem + 2.2222vw, 2.25rem);
   margin-top: 10px;
-  font-size: 10px;
+  font-size: clamp(0.3125rem, 0.2338rem + 0.3704vw, 0.5625rem);
 
   &-top {
-    margin-bottom: 25px;    
+    margin-bottom: 25px;
+    padding-left: clamp(2.544375rem, 1.6444rem + 4.2352vw, 5.403125rem);
   }
 
   &-top span {
     color: $secondary-text-color;
-    font-weight: 400;  
+    font-weight: 400;
+    white-space: nowrap;
   }
 
   &-bottom {
-    margin-top: 25px;    
+    margin-top: 25px;
   }
 
   &-bottom span {
     color: $modal-text-color;
-    font-weight: 300;  
+    font-weight: 300;
   }
 }
 
 .label {
   text-align: center;
+  white-space: wrap;
 }
 
 .slider-track-wrapper {
   position: relative;
-  width: 99%; /* Установить ширину блока с линиями */
-  margin: 0 auto; /* Центрировать блок по ширине родителя */
+  width: 90%;
+  margin: 0 auto;
 }
 
 .slider-track-lines {
   position: absolute;
-  top: 50%; /* Позиционировать линии относительно центра трека */
+  top: 50%;
+  /* Позиционировать линии относительно центра трека */
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Чтобы линии не перекрывали ползунок */
-  transform: translateY(-50%); /* Центрирование по вертикали */
+  pointer-events: none;
+  /* Чтобы линии не перекрывали ползунок */
+  transform: translateY(-50%);
+  /* Центрирование по вертикали */
 }
 
 .track-line {
   position: absolute;
   width: 1px;
-  height: 10px; 
-  background-color: $border-color; 
-  transform: translateX(-50%); /* Центрирование линии по цифре */
-  transition: opacity 0.3s; /* Плавное изменение видимости */
-  top: 90%; /* Расположить линию ниже трека */
+  height: 10px;
+  background-color: $border-color;
+  transform: translateX(-50%);
+  /* Центрирование линии по цифре */
+  transition: opacity 0.3s;
+  /* Плавное изменение видимости */
+  top: 90%;
+  /* Расположить линию ниже трека */
 }
 
 .track-line-inner {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%); /* Центрирование линии по цифре */
+  transform: translateX(-50%);
+  /* Центрирование линии по цифре */
   width: 1px;
   height: 10px;
   background-color: $border-color;

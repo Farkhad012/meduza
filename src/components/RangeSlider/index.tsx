@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import './styles.scss'; // Подключите стили
+import { useTranslation } from 'react-i18next';
+
+import './styles.scss';
 
 export const RangeSlider: React.FC = () => {
-  const [value, setValue] = useState<number>(1); // Указываем тип состояния
+  const { t } = useTranslation('order');
+  const [value, setValue] = useState<number>(1);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(Number(e.target.value));
   };
 
-  // Преобразование значения ползунка в проценты для градиента
   const trackStyle = {
     background: `linear-gradient(
       to right,
@@ -21,13 +23,24 @@ export const RangeSlider: React.FC = () => {
   return (
     <div className="range-slider">
       <div className="slider-labels slider-labels-top">
-        <span className="label"></span>
-        <span className="label">-5% OFF</span>
-        <span className="label">-10% OFF</span>
-        <span className="label">-20% OFF</span>
-        <span className="label">-30% OFF</span>
-        <span className="label">-40% OFF</span>
-        <span className="label">-50% OFF</span>
+        <span className="label">
+          -5% {t('OFF_')}
+        </span>
+        <span className="label">
+          -10% {t('OFF_')}
+        </span>
+        <span className="label">
+          -20% {t('OFF_')}
+        </span>
+        <span className="label">
+          -30% {t('OFF_')}
+        </span>
+        <span className="label">
+          -40% {t('OFF_')}
+        </span>
+        <span className="label">
+          -50% {t('OFF_')}
+        </span>
       </div>
       <div className="slider-track-wrapper">
         <input
@@ -37,7 +50,7 @@ export const RangeSlider: React.FC = () => {
           value={value}
           onChange={handleChange}
           className="slider"
-          style={trackStyle} // Применяем динамическое изменение фона
+          style={trackStyle}
         />
         <div className="slider-track-lines">
           {[0, 1, 2, 3, 4, 5, 6].map(index => {
@@ -56,13 +69,27 @@ export const RangeSlider: React.FC = () => {
         </div>
       </div>
       <div className="slider-labels slider-labels-bottom">
-        <span className="label">1 month</span>
-        <span className="label">3 months</span>
-        <span className="label">6 months</span>
-        <span className="label">12 months</span>
-        <span className="label">24 months</span>
-        <span className="label">36 months</span>
-        <span className="label">60 months</span>
+        <span className="label">
+          1 {t('Month_')}
+        </span>
+        <span className="label">
+          3 {t('Month_')}
+        </span>
+        <span className="label">
+          6 {t('Month_')}
+        </span>
+        <span className="label">
+          12 {t('Month_')}
+        </span>
+        <span className="label">
+          24 {t('Month_')}
+        </span>
+        <span className="label">
+          36 {t('Month_')}
+        </span>
+        <span className="label">
+          60 {t('Month_')}
+        </span>
       </div>
     </div>
   );

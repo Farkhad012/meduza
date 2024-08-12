@@ -6,12 +6,7 @@ import React, {
   useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-// import cn from 'classnames';
-
-// import { flagBrazilIcon } from 'assets/images';
 import { LocaleKey, localeNames } from 'constants/';
-
-// import { Image } from 'components';
 
 import { LanguageType, selectLanguage } from './menu';
 
@@ -36,12 +31,13 @@ export const LangMenu: FC<ILangMenu> = memo(({
   const [isOpenLang, setIsOpenLang] = useState(false);
 
   const languageAdditional = selectLanguage;
+  console.log(languageAdditional);
 
   const changeLanguage = useCallback((lang: LanguageType) => {
+    console.log(lang)
     setLanguage(lang);
     i18n.changeLanguage(lang.value);
     localStorage.setItem('lng', lang.value);
-
     setIsOpenLang(!isOpenLang);
   }, [isOpenLang, i18n, onChangeLangBanner]);
 

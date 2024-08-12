@@ -16,7 +16,7 @@ export const selectLanguage: LanguageType[] = [
     value: LocaleKey.ru,
   },
   {
-    label: localeNames.ch,
-    value: LocaleKey.ch,
+    label: localeNames.cn,
+    value: LocaleKey.cn,
   },  
 ];

@@ -12,35 +12,16 @@
 
 
   &__message {
-    font-size: 16px;
+    font-size: clamp(0.75rem, 0.6553rem + 0.3883vw, 1rem);
     line-height: 1.1;
     font-weight: 300;
     color: $modal-text-color;
     white-space: wrap;
   }
 
-  @media screen and (max-width: 1024px) {
-    &__message {
-      font-size: 14px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    &__message {
-      font-size: 12px;
-    }
-  }
-
   &__close-btn img {
-    width: 16px;
-    height: 16px;
-  }
-
-  @media screen and (max-width: 768px) {
-    &__close-btn img{
-      width: 12px;
-      height: 12px;
-    }
+    width: clamp(0.75rem, 0.6553rem + 0.3883vw, 1rem);
+    height: clamp(0.75rem, 0.6553rem + 0.3883vw, 1rem);
   }
 }
 

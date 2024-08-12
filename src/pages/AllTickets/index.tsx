@@ -29,7 +29,7 @@ interface Ticket {
 export const AllTickets: React.FC = () => {
   const { t } = useTranslation('allTickets');
   const [tickets, setTickets] = useState<Ticket[]>([]);
-  const { openModal, setOpenModal } = useContext(ModalContext);
+  const { setOpenModal } = useContext(ModalContext);
 
   const columns = [
     { key: 'id', label: t('ID_') },
@@ -41,12 +41,7 @@ export const AllTickets: React.FC = () => {
 
   const handleOpenCreateTicket = () => {
     console.log('Opening Create Ticket Modal');
-    setOpenModal(!openModal);
-  };
-
-  const handleClose = () => {
-    console.log('Closing Create Ticket Modal');
-    setOpenModal(!openModal);
+    setOpenModal('createTicket');
   };
 
   return (
@@ -73,17 +68,6 @@ export const AllTickets: React.FC = () => {
         />
       </div>
 
-      <Modal
-        className="modal"
-        open={openModal}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <ModalPaper handleClose={handleClose}>
-          <CreateTicket />
-        </ModalPaper>
-      </Modal>
     </div>
   );
 };

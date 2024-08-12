@@ -9,7 +9,7 @@ interface DashboardSectionTitletProps {
 export const DashboardSectionTitle: React.FC<DashboardSectionTitletProps> = ({ text }) => {
   return (
     <>
-      <h2 className="title">{text}</h2>
+      <h6 className="title">{text}</h6>
     </>
   );
 };

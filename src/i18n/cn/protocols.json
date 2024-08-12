@@ -1,12 +1,12 @@
 {
-  "Supports_modern_protocols_": " Supports modern protocols",
-  "To_bypass_blocks_": " to bypass blocks",
-  "Popular_and_reliable_": " Popular and reliable",
-  "OpenVPN_and_WireGuard_": " OpenVPN and WireGuard.",
-  "AmneziaWG_with_traffic_recognition_protection_": " AmneziaWG with traffic recognition protection",
-  "And_WireGuard_performance_": " and WireGuard performance.",
-  "OpenVPN_over_Cloak_-_": " OpenVPN over Cloak -",
-  "Works_even_where_other_VPNs_don_t_": " works even where other VPNs don’t",
-  "In_China_Iran_and_Turkmenistan_": " — in China, Iran, and Turkmenistan",
-  "List_of_supported_protocols_by_platform_": " List of supported protocols by platform"
+  "Supports_modern_protocols_": " 支持现代协议 ",
+  "To_bypass_blocks_": " 绕过阻塞 ",
+  "Popular_and_reliable_": " 流行且可靠的 ",
+  "OpenVPN_and_WireGuard_": " OpenVPN 和 WireGuar ",
+  "AmneziaWG_with_traffic_recognition_protection_": " AmneziaWG 具有流量识别保护 ",
+  "And_WireGuard_performance_": " 和 WireGuard 性能 ",
+  "OpenVPN_over_Cloak_-_": " OpenVPN over Cloak - ",
+  "Works_even_where_other_VPNs_don_t_": " 即使其他 VPN 无法使用的地方也能使用 ",
+  "In_China_Iran_and_Turkmenistan_": " - 在中国、伊朗和土库曼斯坦 ",
+  "List_of_supported_protocols_by_platform_": " 平台支持的协议列表 "
 }

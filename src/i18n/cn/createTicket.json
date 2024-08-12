@@ -1,9 +1,9 @@
 {
-  "Ticket_successfully_created_": " Ticket successfully created ",
-  "New_ticket_": " New ticket ",
-  "To_the_support_": " to the support ",
-  "Subject_": " Subject ",
-  "Text_": " Text ",
-  "Cancel_": " cancel ",
-  "Create_": " create "
+  "Ticket_successfully_created_": " 申请已成功创建 ",
+  "New_ticket_": " 新申请 ",
+  "To_the_support_": " 到支持 ",
+  "Subject_": " 主题 ",
+  "Text_": " 内容 ",
+  "Cancel_": " 取消 ",
+  "Create_": " 创建 "
 }

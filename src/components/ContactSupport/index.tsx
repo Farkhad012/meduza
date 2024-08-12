@@ -13,10 +13,10 @@ import './styles.scss';
 
 export const ContactSupport: React.FC = () => {
   const { t } = useTranslation('contactSupport');
-  const { openModal, setOpenModal } = useContext(ModalContext);
+  const { setOpenModal } = useContext(ModalContext);
 
   const handleToggle = () => {
-    setOpenModal(!openModal);
+    setOpenModal('createTicket');
   }
 
   return (
@@ -28,17 +28,7 @@ export const ContactSupport: React.FC = () => {
         </a>
       </p>
 
-      <Modal
-        className="modal"
-        open={openModal}
-        onClose={handleToggle}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <ModalPaper handleClose={handleToggle}>
-          <CreateTicket />
-        </ModalPaper>
-      </Modal>
+      
     </>
   );
 };

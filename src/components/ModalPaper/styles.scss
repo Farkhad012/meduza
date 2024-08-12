@@ -2,41 +2,34 @@
 
 .modal-paper {
   background-color: white;
-  max-width: 760px;
-  max-height: 90vh;
+  min-height: max-content;
+  min-height: max-content;
   margin: 0 auto;
-  height: max-content;
+  // height: max-content;
   border-radius: $border-radius;
-  padding: 76px 100px;
+  padding: clamp(0.9375rem, 0.1092rem + 3.3981vw, 3.125rem) clamp(1.25rem, -0.6432rem + 7.767vw, 3.125rem);
   position: relative;
-}
+  margin: auto;
 
-@media screen and (max-width: 1024px) {
-  .modal-paper {
-    padding: 62px 80px;
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .modal-paper {
-    max-width: 340px;
-    padding: 29px 20px;
+  &__body {
+    width: 100%;
   }
+
 }
 
 .close-btn {
-  position: absolute;
-  top: 50px;
-  right: 50px;
+  margin: 10px;
+}
+
+.close-btn img {
   background: transparent;
-  width: 20px;
-  height: 20px;
+  width: clamp(0.9375rem, 0.8192rem + 0.4854vw, 1.25rem);
+  height: clamp(0.9375rem, 0.8192rem + 0.4854vw, 1.25rem);
 }
-
-@media screen and (max-width: 1024px) {
-  .close-btn {
-    width: 15px;
-    height: 15px;
-  }
-}
-

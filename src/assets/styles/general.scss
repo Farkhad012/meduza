@@ -100,19 +100,7 @@ span {
 .modal {
   &__container {
     background-color: white;
-    width: 560px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    &__container {
-      width: 460px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    &__container {
-      width: 300px;
-    }
+    width: clamp(18.75rem, 12.5971rem + 25.2427vw, 35rem);
   }
 
   &__form-header {
@@ -125,27 +113,18 @@ span {
   }
 
   &__form-content {
-    margin-top: 45px;
+    margin-top: clamp(1.5625rem, 1.2075rem + 1.4563vw, 2.5rem);
     font-family: 'Unbounded blond';
     color: $modal-text-color;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 1.358rem + 0.5825vw, 1.875rem);
   }
 
   &__form-content>a {
+    font-family: $primary-font;
+    font-size: clamp(0.75rem, 0.6553rem + 0.3883vw, 1rem);;
     font-weight: 300;
-  }
-
-  @media screen and (max-width: 1024px) {
-    &__form-content {
-      margin-top: 40px;
-    }
-  }
-
-  &__form-item {
-    margin-bottom: 40px;
-  }
-
-  &__form-item:nth-child(2) {
-    margin-bottom: 30px;
   }
 
   &__form-item p {
@@ -171,35 +150,42 @@ span {
     flex: 1 1 auto;
     margin-top: 20px;
     font-family: $primary-font;
-    padding: 30px 20px;
-    font-size: 14px;
+    padding: clamp(1rem, 0.9053rem + 0.3883vw, 1.25rem);
+    font-size: clamp(0.625rem, 0.483rem + 0.5825vw, 1rem);
     font-weight: 300;
     line-height: 1.1;
-
     outline: 1px solid $border-color;
     border-radius: 20px;
     width: 100%;
-    height: 80px;
+    height: clamp(3.75rem, 3.2767rem + 1.9417vw, 5rem);
     white-space: wrap;
     white-space: pre-wrap;
+    color: $dark-text-color;
+  }
+
+  &__form-item input::-webkit-input-placeholder {
+    color: $modal-text-color;
   }
 
   &__form-item textarea {
     margin-top: 20px;
-    padding: 30px 20px;
-    font-size: 14px;
-    // line-height: 1.1;
-    // resize: vertical;
-
+    padding: clamp(1rem, 0.9053rem + 0.3883vw, 1.25rem);
+    font-family: $primary-font;
+    font-size: clamp(0.625rem, 0.483rem + 0.5825vw, 1rem);
+    font-weight: 300;
     outline: 1px solid $border-color;
     border-radius: 20px;
     width: 100%;
-
+    color: $dark-text-color;
     overflow: hidden;
   }
 
+  &__form-item textarea::placeholder {
+    color: $modal-text-color;
+  }
+
   &__form-item .text {
-    min-height: 214px;
+    min-height: clamp(9.25rem, 7.6881rem + 6.4078vh, 13.375rem);
   }
 
 
@@ -290,27 +276,15 @@ span {
   }
 
   &__form-footer {
-    margin-top: 50px;
+    margin-top: clamp(1.25rem, 1.0133rem + 0.9709vw, 1.875rem);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-  }
-
-  &__form-footer>.button.purple {
-    width: 300px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    &__form-footer {
-      margin-top: 40px;
-    }
+    gap: 16px;
   }
 
   @media screen and (max-width: 768px) {
     &__form-footer {
-      margin-top: 35px;
-      gap: 20px;
       flex-direction: column-reverse;
     }
   }
@@ -319,20 +293,20 @@ span {
     color: $secondary-text-color;
     white-space: nowrap;
     font-weight: bold;
+    font-size: clamp(0.75rem, 0.608rem + 0.5825vw, 1.125rem);
   }
 
   &__form-footer p {
     font-family: 'Unbounded blond';
-    font-size: 18px;
+    font-size: clamp(0.75rem, 0.608rem + 0.5825vw, 1.125rem);
     line-height: 1.3;
     text-align: right;
     white-space: wrap;
-    width: 200px;
+    width: 190px;
   }
 
   @media screen and (max-width: 768px) {
     &__form-footer p {
-      font-size: 12px;
       width: 100%;
       text-align: center;
       white-space: nowrap;
@@ -340,7 +314,8 @@ span {
   }
 
   &__form-footer button {
-    width: 300px;
+    width: 50%;
+    padding: clamp(1rem, 0.716rem + 1.165vw, 1.75rem);
   }
 
   @media screen and (max-width: 768px) {
@@ -348,10 +323,4 @@ span {
       width: 100%;
     }
   }
-
 }
-
-// .checkbox {
-//   width: 20px;
-//   height: 20px;
-// }

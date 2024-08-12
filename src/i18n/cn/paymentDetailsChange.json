@@ -1,10 +1,10 @@
 {
-  "Full_name_": "Full name *",
-  "Date_of_birth_": "Date of Birth *",
-  "Passport_data_": "Passport data *",
-  "Mailing_address_": "Mailing address *",
-  "Postcode_": "Postcode *",
-  "Phone_number_": "Phone Number *",
-  "Email_": "Email *",
-  "Save_information_": "save information"
+  "Full_name_": " 全名 ",
+  "Date_of_birth_": " 出生日期 ",
+  "Passport_data_": " 护照信息 ",
+  "Mailing_address_": " 邮寄地址 ",
+  "Postcode_": " 邮政编码 ",
+  "Phone_number_": " 电话号码 ",
+  "Email_": " 电子邮件 ",
+  "Save_information_": " 保存信息 "
 }

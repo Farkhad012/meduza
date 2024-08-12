@@ -38,27 +38,19 @@
     margin: 0;
     color: white;
     font-weight: 300;
-    font-size: 18px;
+    font-size: clamp(0.75rem, 0.608rem + 0.5825vw, 1.125rem);
     line-height: 1.1;
-  }
-
-  @media screen and (max-width: 1024px) {
-    &__title {
-      font-size: 14px;
-    }
   }
 
   @media screen and (max-width: 768px) {
     &__title {
       min-width: 250px;
       text-align: center;
-      font-size: 12px;
     }
   }
 
   &__container button {
-    padding: 18px 46px;
+    padding: 14px 36px;
   }
-
 
 }

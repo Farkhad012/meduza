@@ -10,14 +10,16 @@ interface ModalPaperProps {
   children: React.ReactNode;
 }
 
-export const ModalPaper = forwardRef<HTMLDivElement, ModalPaperProps>(({ children, handleClose }, ref) => {
+export const ModalPaper = forwardRef<HTMLDivElement, ModalPaperProps>(({ children, handleClose}, ref) => {
   return (
     <Box ref={ref} className="modal-paper">
-      <button
-        onClick={handleClose}
-        className='close-btn'>
-        <img src={close} alt="close" />
-      </button>
+      <div className='modal-paper__header'>
+        <button
+          onClick={handleClose}
+          className='close-btn'>
+          <img src={close} alt="close" />
+        </button>
+      </div>
       {children}
     </Box>
   );

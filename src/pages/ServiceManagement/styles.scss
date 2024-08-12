@@ -21,7 +21,7 @@
       padding: 25px;
 
       font-family: $primary-font;
-      font-size: 16px;
+      font-size: clamp(0.75rem, 0.6553rem + 0.3883vw, 1rem);
     }
 
     & .filter-group #service-id {
@@ -38,6 +38,12 @@
 
     & .filter-group #service-ip {
       width: 240px;
+    }
+
+    @media screen and (max-width: 768px) {
+      & .filter-group input {
+        width: 100%;
+      }
     }
 
     & .filter-group label {

@@ -58,6 +58,12 @@
   padding: 0;
   display: none;
   background: none;
+ 
+}
+
+.burger img {
+  width: clamp(0.875rem, 0.733rem + 0.5825vw, 1.25rem);
+  height: auto;
 }
 
 @media screen and (max-width: 1024px) {

@@ -30,12 +30,12 @@ export const NavMenuContainer: React.FC = () => {
 
   const handleOpenCreateTicket = () => {
     console.log('Opening Create Ticket Modal');
-    setOpenModal(!openModal);
+    setOpenModal('createTicket');
   };
 
   const handleClose = () => {
     console.log('Closing Create Ticket Modal');
-    setOpenModal(!openModal);
+    setOpenModal(null);
   };
 
   const handleLogout = () => {
@@ -121,8 +121,15 @@ export const NavMenuContainer: React.FC = () => {
       </div>
 
       <Modal
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginLeft: '5vw',
+          marginRight: '5vw',
+          overflowY: 'auto',
+        }}
         className="modal"
-        open={openModal}
+        open={openModal === 'createTicket'}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"

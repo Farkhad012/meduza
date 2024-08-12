@@ -9,18 +9,19 @@ import './styles.scss';
 
 export const TopUpBalance: React.FC = () => {
   const { t } = useTranslation('topUpBalance');
-  const [amount, setAmount] = useState('Enter Promocode');
+  // const [amount, setAmount] = useState('Enter Promocode');
 
   return (
     <div className="top-up-balance">
-      <div className="promocode-input">
-        <textarea
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+      <div className="amount-input">
+        <input
+          type='text'
+          // value="amount"
+          // onChange={(e) => setAmount(e.target.value)}
           placeholder={t('Enter_the_amount_of_payment_to_top_up_')}
         />
-        <button onClick={() => alert(`Topping up balance by $${amount}`)}>
-          ${amount || '0.00'}
+        <button onClick={() => alert(`Topping up balance by $`)}>
+          ${'0.00'}
         </button>
       </div>
       <DashboardSectionTitle text={t('Payment_methods_')} />

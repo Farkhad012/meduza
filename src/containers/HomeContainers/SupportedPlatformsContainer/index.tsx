@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { windows, macos, linux, android, router, check, cross, arrowRight } from 'assets/images/icons';
 import { supportMatrix } from './data';
 import './styles.scss';
@@ -16,6 +17,7 @@ const platformIcons: Record<string, string> = {
 };
 
 export const PlatformsContainer: React.FC = () => {
+  const { t } = useTranslation('platforms');
   const platforms: Platform[] = Object.keys(supportMatrix[0]).filter(key => key !== 'protocol') as Platform[];
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -59,7 +61,7 @@ export const PlatformsContainer: React.FC = () => {
       <div className="platforms__container">
         <div className="platforms__scrollbar">
           <div className="platforms__scrollbar-header">
-            <div className="platforms__scrollbar-text">листайте вправо</div>
+            <div className="platforms__scrollbar-text"> {t('Scroll_right_')}</div>
             <img src={arrowRight} className="platforms__scrollbar-arrow" alt="Scroll right" />
           </div>
           <div className="platforms__scrollbar-track" onClick={handleCustomScroll} ref={customScrollbarRef}>
@@ -93,6 +95,16 @@ export const PlatformsContainer: React.FC = () => {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="legend">
+          <div className="legend__item">
+            <img src={check} alt="in release" />
+            {t('In_release_')}
+          </div>
+          <div className="legend__item">
+            <img src={cross} alt="not planned" />
+            {t('Not_planned_to_be_developed_')}
+          </div>
         </div>
       </div>
     </section>

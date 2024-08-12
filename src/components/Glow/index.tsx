@@ -8,8 +8,8 @@ interface GlowProps {
   top: string;
   left?: string;
   right?: string;
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
 }
 
 gsap.registerPlugin(ScrollTrigger);

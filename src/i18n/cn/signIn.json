@@ -1,8 +1,8 @@
 {
-  "Sign_in_": " Sign In ",
-  "Email_": " Email ",
-  "Password_": " Password ",
-  "Forgot_your_password_": " Forgot your password? ",
-  "New_member_": " New member? ",
-  "Sign_up_": " Sign Up "
+  "Sign_in_": " 登录 ",
+  "Login_": " 登录 ",
+  "Password_": " 密码 ",
+  "Forgot_your_password_": " 忘记了你的密码？",
+  "New_member_": " 新成员？",
+  "Sign_up_": " 注册 "
 }

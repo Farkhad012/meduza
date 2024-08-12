@@ -55,7 +55,7 @@ export const PaymentDetails: React.FC = () => {
           <span> 7 123 4567890</span>
         </p>
         <p>
-          {t('Mail_')}:
+          {t('E-Mail_')}:
           <span> email@email.com</span>
         </p>
         <p>

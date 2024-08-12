@@ -73,7 +73,7 @@
 
     &__table-container {
       overflow-x: auto;
-      margin-top: 30px;
+      margin-top: 30px;      
     }
 
     &__table {
@@ -187,4 +187,29 @@
     background-color: $page-bg-color;
   }
 
+}
+
+.legend {
+  margin-top: clamp(1.5rem, 1.1214rem + 1.5534vw, 2.5rem);
+  font-size: clamp(0.75rem, 0.608rem + 0.5825vw, 1.125rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 28px;
+  margin-right: 38px;
+
+  &__item {
+    margin-right: clamp(0rem, -0.9466rem + 3.8835vw, 2.5rem);
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: clamp(1rem, 0.8107rem + 0.7767vw, 1.5rem);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .legend {
+    justify-content: space-between;
+  }
 }

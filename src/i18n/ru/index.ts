@@ -7,7 +7,7 @@ import protocols from './protocols.json';
 import advantages from './advantages.json';
 import privacySecurity from './privacySecurity.json';
 import platforms from './platforms.json';
-import orderPage from './orderPage.json';
+import order from './order.json';
 import signIn from './signIn.json';
 import signUp from './signUp.json';
 import burgerMenu from './burgerMenu.json';
@@ -34,7 +34,7 @@ export const ru = {
   advantages,
   privacySecurity,
   platforms,
-  orderPage,
+  order,
   signIn,
   signUp,
   burgerMenu,

@@ -12,6 +12,7 @@ interface OrderProps {
 }
 
 export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
+  const { t } = useTranslation('order');
   const [country, setCountry] = useState<string | null>(null);
   const [promocode, setPromocode] = useState('Enter Promocode');
   const [isChecked, setIsChecked] = useState(false);
@@ -24,17 +25,15 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
 
   return (
     <div className="order-container">
-      <Box
-        
-      >
+      <Box>
         <div className="order order-paper">
-          <h3>
-            Your best location is
-            <span>
-              DataLine (Tier-3).
-            </span>
-          </h3>
-          <DashboardSectionTitle text='Choose another location:' />
+          <div className='order__header'>
+            <h3>
+              {t('Your_best_location_is_')}
+              <span> {t('DataLine_Tier_3_')}.</span>
+            </h3>
+            <DashboardSectionTitle text={t('Choose_another_location_')} />
+          </div>
 
           <Dropdown
             options={["DataLine (Tier-3) (Russia, Moscow) (19 ms)", "DataLine (Tier-3) (Russia, Moscow) (19 ms)"]}
@@ -42,7 +41,7 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
           />
 
           <div className="payment-period">
-            <DashboardSectionTitle text='Payment period' />
+            <DashboardSectionTitle text={t('Payment_period_')} />
             <div>
 
               <RangeSlider />
@@ -51,80 +50,79 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
           </div>
 
           <div className="promocode">
-            <DashboardSectionTitle text='Have a promocode?' />
+            <DashboardSectionTitle text={t('Have_a_promocode_')} />
             <div className="promocode-input">
               <input
                 type='text'
-                value={promocode}
-                onChange={(e) => setPromocode(e.target.value)}
-                placeholder="Enter Promocode"
+                // value={promocode}
+                // onChange={(e) => setPromocode(e.target.value)}
+                placeholder={t('Enter_Promocode_')}
               />
-              <Button type='button' color='blue' text='apply' />
+              <Button type='button' color='blue' text={t('Apply_')} />
             </div>
           </div>
 
-          <div className="subscription">
-            <div className='priceboard'>
-              <div className="price-amount">
-                <p className="subscription-plan">6 months for</p>
-                <span className="subscription-price">$89,70</span>
+          <div className='order__footer'>
+            <div className="subscription">
+              <div className='priceboard'>
+                <div className="price-amount">
+                  <p className="subscription-plan">6 {t('Months_for_')}</p>
+                  <span className="subscription-price">$89,70</span>
+                </div>
+                |
+                <div className="price-amount">
+                  <p className="subscription-plan">1 {t('Month_for_')}</p>
+                  <span className="subscription-price">$1,49</span>
+                </div>
               </div>
-              |
-              <div className="price-amount">
-                <p className="subscription-plan">1 month for</p>
-                <span className="subscription-price">$1,49</span>
-              </div>
+              <Button type='button' color='purple' text={t('Order_plan_')} />
             </div>
-            <Button type='button' color='purple' text='order plan' />
-          </div>
-
-          <div className="order__form-agreement">
-            <Checkbox
-              checked={isChecked}
-              onChange={setIsChecked}
-            />
-            <p>
-              Agree with the terms of
-              <NavLink
-                to="#"
-              >
-                the offer
-              </NavLink>
+            <div className="order__form-agreement">
+              <Checkbox
+                checked={isChecked}
+                onChange={setIsChecked}
+              />
+              <p>
+                {t('Accept_')}
+                <NavLink
+                  to="#"
+                >
+                  {t('The_terms_of_the_offer_')}
+                </NavLink>
+              </p>
+            </div>
+            <p className='term'>
+              {t('If_you_ordered_a_VPS_and_you_are_not_satisfied_with_the_quality_of_its_work_then_within_15_days_from_the_date_of_order_we_will_make_a_refund_in_any_case_')}
             </p>
           </div>
-
-          <p>
-            If you ordered a VPS and you are not satisfied with the quality of its work,
-            then within 15 days from the date of order, we will make a refund in any case.
-          </p>
         </div>
 
 
       </Box>
       <Box>
         <div className="order-receipt order-paper">
-          <DashboardSectionTitle text='Your order:' />
+          <DashboardSectionTitle text={t('Your_order_')} />
 
           <div className="order-details">
             <div className="order-details__item">
               <span>
-                Virtualization
+                {t('Virtualization_')}
               </span>
               <p>
-                KVM
+                {t('KVM_')}
               </p>
             </div>
             <div className="order-details__item">
               <span>
-                Bandwidth (fair-share)
+                {t('Bandwidth_fair_share_')}
               </span>
               <p>
-                500 Mbit
+               500 {t('Mbit_')}
               </p>
             </div>
             <div className="order-details__item">
               <span>
-                CPU cores
+                {t('CPU_cores_')}
               </span>
               <p>
                 4
@@ -132,7 +130,7 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
             </div>
             <div className="order-details__item">
               <span>
-                RAM size
+                {t('RAM_size_')}
               </span>
               <p>
                 4096 Mb
@@ -140,7 +138,7 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
             </div>
             <div className="order-details__item">
               <span>
-                NVMe size
+                {t('NVMe_size_')}
               </span>
               <p>
                 50 Gb
@@ -148,23 +146,23 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
             </div>
             <div className="order-details__item">
               <span>
-                IPv4 addresses 1 unit
+                {t('IPv4_addresses_1_unit_')}
               </span>
               <p>
-                $0 / month
+                0 {t('Month_')}
               </p>
             </div>
             <div className="order-details__item">
               <span>
-                IPv6 addresses
+                {t('IPv6_addresses_1_unit_')}
               </span>
               <p>
-                $0 / month
+                $0 / {t('Month_')}
               </p>
             </div>
             <div className="order-details__item">
               <span>
-                CentOS 7 64bit (default)
+                {t('CentOS_7_64bit_default_')}
               </span>
               <p>
                 $0
@@ -172,18 +170,18 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
             </div>
             <div className="order-details__item">
               <span>
-                Location
+                {t('Location_')}
               </span>
               <p>
-                DataLine (Tier-3).
+                {t('DataLine_Tier_3_')}
               </p>
             </div>
             <div className="order-details__item">
               <span>
-                NVMe I/O
+                {t('NVMe_IO_')}
               </span>
               <p>
-                700 MB/sec
+                700 {t('MB_sec_')}
               </p>
             </div>
           </div>
@@ -191,16 +189,16 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
           <div className="subscription">
             <div className='priceboard'>
               <div className="price-amount">
-                <p className="subscription-plan">6 months for</p>
+                <p className="subscription-plan">6 {t('Months_for_')}</p>
                 <span className="subscription-price">$89,70</span>
               </div>
               |
               <div className="price-amount">
-                <p className="subscription-plan">1 month for</p>
+                <p className="subscription-plan">1 {t('Month_for_')}</p>
                 <span className="subscription-price">$1,49</span>
               </div>
             </div>
-            <Button type='button' color='purple' text='order plan' />
+            <Button type='button' color='purple' text={t('Order_plan_')} />
           </div>
 
           <div className="order-receipt__form-agreement">
@@ -209,11 +207,11 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
               onChange={setIsChecked}
             />
             <p>
-              Agree with the terms of
+              {t('Accept_')}
               <NavLink
                 to="#"
               >
-                the offer
+                {t('The_terms_of_the_offer_')}
               </NavLink>
             </p>
           </div>

@@ -5,11 +5,12 @@ import { LocaleKey } from 'constants/';
 
 import { ru } from './ru';
 import { en } from './en';
+import { cn } from './cn';
 
 const resources = {
   en,
   ru,
-  // ch,
+  cn,
 };
 
 i18n

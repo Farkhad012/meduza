@@ -20,7 +20,7 @@ import './styles.scss';
 export const Header: React.FC = () => {
   const { t } = useTranslation('header');
   const { isAuthenticated } = useContext(AuthContext)
-  const loginModalContext = useContext(ModalContext);
+  const { openModal, setOpenModal } = useContext(ModalContext);
   const burgerContext = useContext(BurgerContext);
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
   const currentPath = location.pathname;
 
   const handleClose = () => {
-    loginModalContext.setOpenModal(false);
+    setOpenModal(null)
   };
 
   const handleToggleMenu = () => {
@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
   }
 
   const handleClick = () => {
-    isAuthenticated ? navigate(PathName.AccountPage) : loginModalContext.setOpenModal(true);
+    isAuthenticated ? navigate(PathName.AccountPage) : setOpenModal('sign');
   }
 
   return (
@@ -87,7 +87,7 @@ export const Header: React.FC = () => {
 
             <Modal
               className="modal"
-              open={loginModalContext.openModal}
+              open={openModal === 'sign'}
               onClose={handleClose}
               aria-labelledby="modal-modal-title"
               aria-describedby="modal-modal-description"

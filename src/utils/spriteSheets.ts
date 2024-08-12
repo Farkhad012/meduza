@@ -1,5 +1,5 @@
 // src/utils/spriteSheets.ts
-import allInOne from '../assets/images/jellyfish/240_in_one_png8.png';
+import allInOne from '../assets/images/jellyfish/sm11.webp';
 
 export const spriteSheets = [
   allInOne,

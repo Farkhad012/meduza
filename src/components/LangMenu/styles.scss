@@ -1,9 +1,7 @@
-// @import 'src/assets/styles/palette';
-// @import 'src/assets/styles/mixins';
 @import '/src/assets/styles/general.scss';
 
 .lang_controls_menu {
-  z-index: 3;
+  z-index: 99;
   position: absolute;
   top: 0;
   left: 0;

@@ -38,12 +38,13 @@ export const Main: React.FC = () => {
               <SpriteAnimation
                 top="27%"
                 left="30%"
-                width="270px"
-                height="480px"
+                width="178px"
+                height="338px"
+                zIndex="0"
                 frameCount={120}
-                columns={30}
-                rows={8}
-                frameSpeed={1}
+                columns={20}
+                rows={6}
+                frameSpeed={30}
                 initialRotateDesktop={-10}
                 initialRotateMobile={-15}
                 initialRotateTablet={-10}

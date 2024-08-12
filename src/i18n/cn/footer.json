@@ -1,11 +1,11 @@
 {
-  "About_us_": "About us",
-  "Contacts_": "Contacts",
-  "Terms_of_service_": "Terms of Service",
-  "Refund_cancellation_policy_": "Refund/cancellation policy",
-  "Privacy_policy_": "Privacy policy",
-  "Support_": "Support",
-  "Technical_support_service_": "Technical support service",
-  "Looking_glass_": "Looking Glass",
-  "How_to_connect_to_vps_on_ipv6_from_ipv4_address_": "How to connect to VPS on IPv6 from IPv4 address?"
+  "About_us_": " 关于我们 ",
+  "Contacts_": " 往来 ",
+  "Terms_of_service_": " 服务条款 ",
+  "Refund_cancellation_policy_": " 退款/取消政策 ",
+  "Privacy_policy_": " 隐私政策 ",
+  "Support_": " 支持 ",
+  "Technical_support_service_": " 技术支持服务 ",
+  "Looking_glass_": " 镜子 ",
+  "How_to_connect_to_vps_on_ipv6_from_ipv4_address_": " 如何从IPv4地址连接到IPv6上的VPS？"
 }

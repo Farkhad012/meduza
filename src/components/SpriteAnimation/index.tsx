@@ -1,7 +1,6 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 import './styles.scss';
 import { spriteSheets } from 'utils/spriteSheets';
 
@@ -37,15 +36,42 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
   initialRotateDesktop = -10, initialRotateTablet = -5, initialRotateMobile = -20
 }) => {
   const spriteRef = useRef<HTMLDivElement>(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  const frameWidth = 8100 / columns;
-  const frameHeight = 3840 / rows;
+  const frameWidth = 3560 / columns;
+  const frameHeight = 2028 / rows;
+
+  const preloadImages = (images: string[]): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      let loadedImages = 0;
+      const totalImages = images.length;
+
+      const checkLoaded = () => {
+        if (loadedImages >= totalImages) {
+          resolve();
+        }
+      };
+
+      images.forEach((src) => {
+        const img = new Image();
+        img.onload = () => {
+          loadedImages += 1;
+          checkLoaded();
+        };
+        img.onerror = (error) => {
+          reject(error);
+        };
+        img.src = src;
+      });
+    });
+  };
 
   useLayoutEffect(() => {
     if (spriteRef.current) {
       const element = spriteRef.current;
       const totalFrames = frameCount * spriteSheets.length;
       let frameIndex = 0;
+      let startTime = 0;
 
       const updateFrame = () => {
         const sheetIndex = Math.floor(frameIndex / frameCount) % spriteSheets.length;
@@ -53,52 +79,103 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
         const row = Math.floor(localFrame / columns);
         const column = localFrame % columns;
 
-        // Обновление спрайт-листа и кадра
         element.style.backgroundImage = `url(${spriteSheets[sheetIndex]})`;
         element.style.backgroundPositionX = `-${column * frameWidth}px`;
         element.style.backgroundPositionY = `-${row * frameHeight}px`;
       };
 
-      // Определяем параметры в зависимости от ширины экрана
+      const animateSprites = (timestamp: number) => {
+        if (startTime === 0) {
+          startTime = timestamp;
+        }
+        const elapsed = timestamp - startTime;
+        frameIndex = Math.floor((elapsed / (1000 / frameSpeed)) % totalFrames);
+        updateFrame();
+        requestAnimationFrame(animateSprites);
+      };
+
+      preloadImages(spriteSheets).then(() => {
+        setImagesLoaded(true);
+        requestAnimationFrame(animateSprites);
+      }).catch((error) => {
+        console.error('Error preloading images:', error);
+        setImagesLoaded(true);
+        requestAnimationFrame(animateSprites);
+      });
+
       const isMobile = window.innerWidth <= 768;
-      const isTablet = window.innerWidth <= 1024; // Условие для планшетной версии
+      const isTablet = window.innerWidth <= 1024;
 
       const startX = isMobile ? initialXMobile : (isTablet ? initialXTablet : initialXDesktop);
       const startY = isMobile ? initialYMobile : (isTablet ? initialYTablet : initialYDesktop);
-      const moveX = isMobile ? -250 : (isTablet ? 300 : 400); // Направление движения по X, можно скорректировать для планшета
-      const finalY = isMobile ? 600 : (isTablet ? 1200 : 1450); // Конечное положение по Y
+      const moveX = isMobile ? -100 : (isTablet ? 350 : 600);
+      const finalY = isMobile ? 1400 : (isTablet ? 1400 : 1900);
       const initialRotate = isMobile ? initialRotateMobile : (isTablet ? initialRotateTablet : initialRotateDesktop);
-      const finalRotate = isMobile ? -5 : (isTablet ? 0 : 20); // Конечный наклон, можно скорректировать для планшета
+      const finalRotate = isMobile ? -5 : (isTablet ? 0 : 20);
 
-      // Установка начального наклона и позиции
       gsap.set(element, { rotate: initialRotate, x: startX, y: startY });
 
-      // Создание ScrollTrigger для движения медузы по диагонали и изменения угла поворота
-      const scrollTriggerMovement = ScrollTrigger.create({
-        trigger: element,
-        start: 'top center',
-        end: `top+=${finalY}`, // Двигаемся на 1450px по Y
-        scrub: true,
-        animation: gsap.to(element, {
-          x: moveX,
-          y: finalY,
-          rotate: finalRotate,  // Поворот в конечное положение
-          ease: 'none',
-        }),
+      const scrollStart = isMobile ? 'top+=100 center' : 'top center';  // На мобилке start нужен позже
+      const scrollEnd = isMobile ? `top+=${finalY + 500}` : `top+=${finalY}`; // То же с end
+
+
+      const zigzagMovement = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: scrollStart,
+          end: scrollEnd,
+          scrub: 5,  // анимацию делаем плавную
+          markers: false
+        }
       });
 
-      // Создание ScrollTrigger для смены кадров
-      const scrollTriggerFrames = ScrollTrigger.create({
-        trigger: element,
-        start: 'top bottom',
-        end: `+=${finalY * 3}`, // То же самое значение, что и в ScrollTriggerMovement
-        scrub: true,
-        onUpdate: (self) => {
-          const scrollProgress = self.progress;
-          frameIndex = Math.floor(scrollProgress * totalFrames) % totalFrames;
-          updateFrame();
-        },
-      });
+      if (isMobile) {
+        const halfDuration = finalY / 1000; // Сначала ведем модельку влево, а потом вправо
+
+        // Анимация по X и Y
+        zigzagMovement
+          .to(element, {
+            x: moveX,
+            y: finalY / 2,
+            duration: halfDuration,
+            ease: 'sine.inOut'
+          })
+          .to(element, {
+            x: startX,
+            y: finalY,
+            duration: halfDuration,
+            ease: 'none'
+          }, halfDuration); // Синхронизируем с первой анимацией по y
+
+        // Анимация по Y
+        zigzagMovement.to(element, {
+          y: finalY,
+          rotate: finalRotate,
+          ease: 'sine.inOut',
+          modifiers: {
+            y: gsap.utils.unitize(y => {
+              const amplitude = 60;
+              const frequency = 0.02;
+              return y + amplitude * Math.sin(frequency * y);
+            })
+          }
+        });
+      } else {
+        // Для остальных устройств
+        zigzagMovement.to(element, {
+          x: moveX,
+          y: finalY,
+          rotate: finalRotate,
+          ease: 'sine.inOut',
+          modifiers: {
+            y: gsap.utils.unitize(y => {
+              const amplitude = 60;
+              const frequency = 0.02;
+              return y + amplitude * Math.sin(frequency * y);
+            })
+          }
+        });
+      }
 
       return () => {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -119,12 +196,14 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
         height,
         zIndex,
         opacity,
-        position: 'absolute', // Убедитесь, что спрайт остается в правильной позиции
+        position: 'absolute',
         backgroundSize: `${frameWidth * columns}px ${frameHeight * rows}px`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '0 0',
-        transformOrigin: 'center', // Поворот вокруг центра элемента
+        transformOrigin: 'center',
       }}
-    ></div>
+    >
+      {!imagesLoaded && <div className="loading">Loading...</div>}
+    </div>
   );
 };
