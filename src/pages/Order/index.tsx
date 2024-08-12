@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Box } from '@mui/material';
 
 import { Button, Checkbox, DashboardSectionTitle, Dropdown, RangeSlider, } from 'components';
 
+import { close } from 'assets/images/icons';
+
 import './styles.scss';
+import { ModalContext } from 'context/ModalContext';
 
 interface OrderProps {
   toggleForm?: () => void;
@@ -28,6 +31,13 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
       <Box>
         <div className="order order-paper">
           <div className='order__header'>
+            <div className='modal-paper__header'>
+              <button
+                onClick={toggleForm}
+                className='close-btn'>
+                <img src={close} alt="close" />
+              </button>
+            </div>
             <h3>
               {t('Your_best_location_is_')}
               <span> {t('DataLine_Tier_3_')}.</span>
@@ -117,7 +127,7 @@ export const Order: React.FC<OrderProps> = ({ toggleForm }) => {
                 {t('Bandwidth_fair_share_')}
               </span>
               <p>
-               500 {t('Mbit_')}
+                500 {t('Mbit_')}
               </p>
             </div>
             <div className="order-details__item">

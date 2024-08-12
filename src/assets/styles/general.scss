@@ -113,12 +113,12 @@ span {
   }
 
   &__form-content {
-    margin-top: clamp(1.5625rem, 1.2075rem + 1.4563vw, 2.5rem);
+    margin-top: clamp(0.5rem, 0.1214rem + 1.5534vw, 1.5rem);
     font-family: 'Unbounded blond';
     color: $modal-text-color;
     display: flex;
     flex-direction: column;
-    gap: clamp(1.5rem, 1.358rem + 0.5825vw, 1.875rem);
+    // gap: clamp(1.5rem, 1.358rem + 0.5825vw, 1.875rem);
   }
 
   &__form-content>a {
@@ -321,6 +321,7 @@ span {
   @media screen and (max-width: 768px) {
     &__form-footer button {
       width: 100%;
+      padding: 16px;
     }
   }
 }

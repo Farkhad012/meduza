@@ -3,7 +3,7 @@
 .table-wrapper {
   width: 100%;
   background-color: $grey;
-  padding: 28px 40px 40px;
+  padding: 16px 20px;
   border-radius: 20px;
   overflow-x: auto;
   min-width: auto;
@@ -14,7 +14,7 @@
 
 @media screen and (max-width: 1024px) {
   .table-wrapper {
-    padding: 28px 20px 40px;
+    padding: 12px 16px;
   }
 }
 

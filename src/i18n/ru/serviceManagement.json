@@ -1,4 +1,6 @@
 {
+  "There_are_no_services_requiring_payment_and_extension_": " Нет услуг, требующих оплаты и продления. ",
+  "Payment_is_not_required_the_balance_is_sufficient_": " Оплата не требуется, баланс достаточен. ",
   "All_services_": " Все услуги ",
   "ID_": " ID ",
   "Tag_": " Тег ",
@@ -8,7 +10,6 @@
   "Name_": " Имя ",
   "Period_": " Период ",
   "Plan_": " План ",
-
   "Services_not_found_": " Услуги не найдены "
 }
 

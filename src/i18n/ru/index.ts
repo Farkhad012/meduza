@@ -39,7 +39,6 @@ export const ru = {
   signUp,
   burgerMenu,
   setPassword,
-  userAccount,
   allTickets,
   serviceManagement,
   paymentHistory,
@@ -50,4 +49,5 @@ export const ru = {
   setPasswordChange, 
   contactSupport,
   activeServices,
+  userAccount,
 };

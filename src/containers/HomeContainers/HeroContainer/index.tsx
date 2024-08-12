@@ -42,7 +42,7 @@ export const HeroContainer: React.FC = () => {
             overflowY: 'auto',
           }}
           className="modal"
-          open={openModal}
+          open={openModal === 'order'}
           onClose={handleToggle}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"

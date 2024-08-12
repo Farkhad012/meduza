@@ -6,16 +6,16 @@ import { Modal } from '@mui/material';
 import { PathName } from 'constants/';
 
 import { BurgerContext } from 'context/burgerContext';
-import { ModalContext } from 'context/ModalContext';
 import { AuthContext } from 'context/authContext';
 
-import { CreateTicket } from 'pages';
+import { CreateTicket, Order } from 'pages';
 
 import { Button, Logo, ModalPaper } from 'components';
 
 import { burgerIcon } from 'assets/images/icons';
 
 import './styles.scss'
+import { ModalContext } from 'context/ModalContext';
 
 export const NavMenuContainer: React.FC = () => {
   const { t } = useTranslation('burgerMenu');
@@ -38,6 +38,10 @@ export const NavMenuContainer: React.FC = () => {
     setOpenModal(null);
   };
 
+  const handleToggle = () => {
+    setOpenModal('order');
+  }
+
   const handleLogout = () => {
     setIsAuthenticated(false);
   }
@@ -58,7 +62,7 @@ export const NavMenuContainer: React.FC = () => {
             <h3>
               {t('Service_order_')}
             </h3>
-            <Button color="purple" text="+ VPN" fontSize={16} />
+            <Button onClick={handleToggle} color="purple" text="+ VPN" fontSize={16} />
           </div>
         </div>
         <div className="nav__menu">
@@ -137,6 +141,27 @@ export const NavMenuContainer: React.FC = () => {
         <ModalPaper handleClose={handleClose}>
           <CreateTicket />
         </ModalPaper>
+      </Modal>
+
+      <Modal
+        sx={{
+          maxHeight: '100%',
+          display: 'flex',
+          // alignItems: window.innerHeight > 800 ? "center" : "flex-start",
+          justifyContent: 'center',
+          marginLeft: '5vw',
+          marginRight: '5vw',
+          overflowY: 'auto',
+        }}
+        className="modal"
+        open={openModal === 'order'}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Order
+          toggleForm={handleClose}
+        />
       </Modal>
 
     </div >

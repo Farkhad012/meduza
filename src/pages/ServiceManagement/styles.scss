@@ -3,7 +3,7 @@
 .service-management {
 
   & #service-filter-form {
-    margin-top: 60px;
+    margin-top: clamp(1.75rem, 1.466rem + 1.165vw, 2.5rem);
 
     & .filters {
       margin-top: 30px;
@@ -14,30 +14,40 @@
 
     & .filter-group input {
       display: block;
-      margin-top: 20px;
+      margin-top: 12px;
       outline: 1px solid $border-color;
       border-radius: 15px;
       // height: 70px;
-      padding: 25px;
+      padding: 16px;
 
       font-family: $primary-font;
       font-size: clamp(0.75rem, 0.6553rem + 0.3883vw, 1rem);
     }
 
     & .filter-group #service-id {
-      width: 140px;
+      max-width: 140px;
     }
 
     & .filter-group #service-tag {
-      width: 180px;
+      max-width: 180px;
     }
 
     & .filter-group #service-location {
-      width: 280px;
+      max-width: 280px;
     }
 
     & .filter-group #service-ip {
-      width: 240px;
+      max-width: 240px;
+    }
+
+    @media screen and (max-width: 450px) {
+      & .filter-group #service-id
+      & .filter-group #service-tag
+      & .filter-group #service-location
+      & .filter-group #service-ip {
+        width: 100%;
+        max-width: 100%;
+      }
     }
 
     @media screen and (max-width: 768px) {
@@ -52,17 +62,18 @@
       color: $dark-text-color;
       font-family: $primary-font;
       font-weight: 300;
+      font-size: clamp(0.875rem, 0.8277rem + 0.1942vw, 1rem);
     }
 
     & .filter-group .custom-dropdown {
-      margin-top: 20px;
+      margin-top: 12px;
       width: 280px;
-      padding: 25px;
+      padding: 16px;
     }
   }
 
   & .table-wrapper {
-    margin-top: 74px;
+    margin-top: clamp(2rem, 1.8107rem + 0.7767vw, 2.5rem);
   }
   
 
