@@ -28,7 +28,7 @@ export const PrivacySecurityContainer: React.FC = () => {
           </div>
         </div>
         <div className="privacy__content">
-          <div className="privacy__content-card">
+          <div className="privacy__content-card blur">
             <div className="privacy__content-icon">
               <img src={logs} alt="logs-icon" />
             </div>
@@ -41,7 +41,7 @@ export const PrivacySecurityContainer: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="privacy__content-card">
+          <div className="privacy__content-card blur">
             <div className="privacy__content-icon">
               <img src={encryption} alt="encryption-icon" />
             </div>

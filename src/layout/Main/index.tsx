@@ -5,14 +5,19 @@ import { Outlet } from 'react-router';
 import { PathName } from 'constants/';
 
 import { Glow, SpriteAnimation } from 'components';
+import { Circle } from 'components/Circle';
 
 import './styles.scss';
-import { Circle } from 'components/Circle';
+
+let count = 0;
 
 export const Main: React.FC = () => {
 
   const location = useLocation();
   const currentPath = location.pathname;
+
+  count++;
+  console.log(count)
 
   return (
     <main className="main">
@@ -35,16 +40,16 @@ export const Main: React.FC = () => {
               <Circle top="53%" left="60%" size="20vw" zIndex="0" opacity="0.5" parallaxSpeed={0.2} />
               <Circle top="67%" left="0%" size="30vw" zIndex="0" opacity="0.5" parallaxSpeed={0.2} />
 
+
               <SpriteAnimation
-                top="27%"
-                left="30%"
+                top="7%"
+                left="20%"
                 width="178px"
                 height="338px"
-                zIndex="0"
                 frameCount={120}
                 columns={20}
                 rows={6}
-                frameSpeed={30}
+                frameSpeed={10}
                 initialRotateDesktop={-10}
                 initialRotateMobile={-15}
                 initialRotateTablet={-10}

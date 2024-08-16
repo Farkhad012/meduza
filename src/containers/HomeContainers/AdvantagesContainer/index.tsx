@@ -12,7 +12,7 @@ export const AdvantagesContainer: React.FC = () => {
     <section id="advantages">
       <div className="advantages__container">
         <div className="advantages__items">
-          <div className="advantages__item">
+          <div className="advantages__item blur">
             <div className="advantages__item-icon">
               <img src={share} alt="share-icon" />
             </div>
@@ -23,7 +23,7 @@ export const AdvantagesContainer: React.FC = () => {
               {t('In_a_few_clicks_and_without_restrictions_')}
             </span>
           </div>
-          <div className="advantages__item">
+          <div className="advantages__item blur">
             <div className="advantages__item-icon">
               <img src={world} alt="world-icon" />
             </div>
@@ -34,7 +34,7 @@ export const AdvantagesContainer: React.FC = () => {
               {t('Split_tunneling_is_available_on_all_platforms_')}
             </span>
           </div>
-          <div className="advantages__item">
+          <div className="advantages__item blur">
             <div className="advantages__item-icon">
               <img src={settings} alt="settings-icon" />
             </div>

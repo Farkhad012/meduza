@@ -9,6 +9,11 @@
     padding: 70px 0 50px;
   }
 
+  &__link {
+    padding: 16px;
+    border-radius: 25px;
+  }
+
   @media screen and (max-width: 1024px) {
     &__container {
       gap: 75px;

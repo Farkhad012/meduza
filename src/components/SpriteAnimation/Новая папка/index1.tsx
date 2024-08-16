@@ -93,7 +93,7 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
         trigger: element,
         start: 'top bottom',
         end: `max`, // То же самое значение, что и в ScrollTriggerMovement
-        endTrigger: `.privacy__header`, 
+        endTrigger: `.privacy__header`,
         scrub: true,
         markers: false,
         onUpdate: (self) => {

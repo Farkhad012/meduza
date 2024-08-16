@@ -44,7 +44,7 @@ export const ProtocolsContainer: React.FC = () => {
             </p>
           </div>
         </div>
-        <NavLink className="protocols__link" to="#supported-platforms">
+        <NavLink className="protocols__link blur" to="#supported-platforms">
           {t('List_of_supported_protocols_by_platform_')}
         </NavLink>
       </div>

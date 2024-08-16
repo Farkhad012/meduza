@@ -89,7 +89,7 @@ export const PlatformsContainer: React.FC = () => {
                 <tr className="platforms__table-row" key={index}>
                   <th className="platforms__table-body-title">{protocol}</th>
                   {Object.values(items).map((item, i) => (
-                    <td className="platforms__table-ceil" key={i}>{item ? <img src={check} alt="check" /> : <img src={cross} alt="cross" />}</td>
+                    <td className="platforms__table-ceil blur" key={i}>{item ? <img src={check} alt="check" /> : <img src={cross} alt="cross" />}</td>
                   ))}
                 </tr>
               ))}

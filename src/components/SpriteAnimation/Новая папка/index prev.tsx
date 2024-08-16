@@ -1,8 +1,9 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './styles.scss';
 import { spriteSheets } from 'utils/spriteSheets';
+
+import './styles.scss';
 
 interface SpriteAnimationProps {
   top: string;
@@ -32,7 +33,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
   top, left, right, width, height, zIndex, opacity, frameCount, columns, rows, frameSpeed = 1,
   initialXDesktop = 0, initialXTablet = 25, initialXMobile = 50,
-  initialYDesktop = 0, initialYTablet = -250, initialYMobile = -300,
+  initialYDesktop = 0, initialYTablet = -250, initialYMobile = -500,
   initialRotateDesktop = -10, initialRotateTablet = -5, initialRotateMobile = -20
 }) => {
   const spriteRef = useRef<HTMLDivElement>(null);
@@ -66,12 +67,6 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
     });
   };
 
-  function customEase(t: number) {
-    if (t < 0.5)
-      return -0.5 * (Math.cos(Math.PI * t) - 1);
-    else return t;
-  }
-
   useLayoutEffect(() => {
     if (spriteRef.current) {
       const element = spriteRef.current;
@@ -102,81 +97,70 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
 
       preloadImages(spriteSheets).then(() => {
         setImagesLoaded(true);
-        gsap.to(element, {
-          opacity: 1,  // Увеличиваем прозрачность
-          duration: 3,  // Длительность анимации
-          ease: 'power2.out'  // Используем плавное затухание для анимации
-        });
+
+        // Активируем элемент, делаем его видимым и начинаем анимацию
+        gsap.to(element, { opacity: 1, y: 0, duration: 2, onComplete: () => {
+          requestAnimationFrame(animateSprites);
+        }});
+      }).catch((error) => {
+        console.error('Error preloading images:', error);
+        setImagesLoaded(true);
         requestAnimationFrame(animateSprites);
       });
 
       const isMobile = window.innerWidth <= 768;
       const isTablet = window.innerWidth <= 1024;
 
-      // Получаем размеры окна и документа
-      const docHeight = document.documentElement.scrollHeight;
-      const winWidth = window.innerWidth;
-      // Вычисляем позиции в процентах
-      const startX = isMobile ? -winWidth * 0.4 : (isTablet ? -winWidth * 0.2 : initialXDesktop);
-      const startY = isMobile ? initialYMobile * 0.7 : (isTablet ? initialYTablet : initialYDesktop);
-      const moveX = isMobile ? 0.5 * winWidth : (isTablet ? 0.45 * winWidth : 0.45 * winWidth); // 10%, 30%, 60% ширины окна
-      const finalY = isMobile ? docHeight * 0.86 : (isTablet ? 0.95 * docHeight : 0.95 * docHeight); // 70% и 120% высоты документа
+      const startX = isMobile ? initialXMobile : (isTablet ? initialXTablet : initialXDesktop);
+      const startY = isMobile ? initialYMobile : (isTablet ? initialYTablet : initialYDesktop);
+      const moveX = isMobile ? -100 : (isTablet ? 350 : 600);
+      const finalY = isMobile ? 1400 : (isTablet ? 1400 : 5000);
       const initialRotate = isMobile ? initialRotateMobile : (isTablet ? initialRotateTablet : initialRotateDesktop);
-      const finalRotate = isMobile ? -5 : (isTablet ? 0 : 20);
+      const finalRotate = isMobile ? -5 : (isTablet ? 0 : -5);
 
-      // Устанавливаем начальное положение и нулевую прозрачность
-      gsap.set(element, { rotate: initialRotate, x: startX, y: startY, opacity: 0 });
+      gsap.set(element, { rotate: initialRotate, x: startX, y: startY, opacity: 0 }); // Устанавливаем начальное значение прозрачности 0
 
-      const scrollStart = isMobile ? 'top+=100 center' : isTablet ? 'top center-=350' : 'top center';  // На мобилке start нужен позже
-      const scrollEnd = `center+=${docHeight - window.innerHeight}`;  // Устанавливаем конец в нижнюю часть страницы
+      const scrollStart = isMobile ? 'bottom' : 'top center';  // На мобилке start нужен позже
+      const scrollEnd = isMobile ? `top+=${finalY + 500}` : `top+=${finalY}`; // То же с end
 
       const zigzagMovement = gsap.timeline({
         scrollTrigger: {
           trigger: element,
           start: scrollStart,
           end: scrollEnd,
-          scrub: 10,  // анимацию делаем плавную
-          markers: false,
-          toggleActions: 'play pause reverse pause'
+          scrub: 20,  // анимацию делаем плавную
+          markers: false
         }
       });
 
       if (isMobile) {
-        // Определяем длительности для каждого этапа
-        const firstPhaseDuration = finalY * 1.2 / 1000;  // 40% пути
-        const secondPhaseDuration = finalY * 1.5 / 1000; // 40% пути
-        const thirdPhaseDuration = finalY * 0.8 / 1000;  // 20% пути
+        const halfDuration = finalY; // Сначала ведем модельку влево, а потом вправо
 
         // Анимация по X и Y
         zigzagMovement
           .to(element, {
             x: moveX,
-            y: finalY * 0.3,
-            duration: firstPhaseDuration,
-            ease: customEase
-          })
-          .to(element, {
-            x: -moveX * 0.7,
-            y: finalY * 0.8,
-            duration: secondPhaseDuration,
-            ease: 'none'
-          })
-          .to(element, {
-            x: moveX * 0.55,
-            y: finalY,
-            duration: thirdPhaseDuration,
+            y: finalY / 2,
+            duration: halfDuration,
             ease: 'sine.inOut'
-          });
+          })
+          .to(element, {
+            x: startX,
+            y: finalY,
+            duration: halfDuration,
+            ease: 'none'
+          }, halfDuration); // Синхронизируем с первой анимацией по y
 
-        // Анимация поворота
+        // Анимация по Y
         zigzagMovement.to(element, {
+          y: finalY,
           rotate: finalRotate,
-          ease: 'none',
+          ease: 'sine.inOut',          
         });
       } else {
         // Для остальных устройств
         zigzagMovement.to(element, {
-          x: moveX,
+          x: moveX,          
           y: finalY,
           rotate: finalRotate,
           ease: 'none',
@@ -209,7 +193,6 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
         transformOrigin: 'center',
       }}
     >
-      {!imagesLoaded && <div className="loading">Loading...</div>}
     </div>
   );
 };
