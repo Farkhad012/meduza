@@ -22,6 +22,7 @@
 
       font-family: $primary-font;
       font-size: clamp(0.75rem, 0.6553rem + 0.3883vw, 1rem);
+      font-weight: 300;
     }
 
     & .filter-group #service-id {
@@ -41,10 +42,7 @@
     }
 
     @media screen and (max-width: 450px) {
-      & .filter-group #service-id
-      & .filter-group #service-tag
-      & .filter-group #service-location
-      & .filter-group #service-ip {
+      & .filter-group #service-id & .filter-group #service-tag & .filter-group #service-location & .filter-group #service-ip {
         width: 100%;
         max-width: 100%;
       }
@@ -75,7 +73,7 @@
   & .table-wrapper {
     margin-top: clamp(2rem, 1.8107rem + 0.7767vw, 2.5rem);
   }
-  
+
 
 
 }

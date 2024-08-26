@@ -27,7 +27,11 @@ export const TopUpBalance: React.FC = () => {
       <DashboardSectionTitle text={t('Payment_methods_')} />
       <div className="payment-methods">
         {Array.from({ length: 6 }).map((_, index) => (
-          <div className={`payment-method ${index === 0 ? 'selected' : 'disabled'}`} key={index}>
+          <button
+            className={`payment-method ${index === 0 ? 'selected' : 'disabled'}`}
+            key={index}
+            disabled={index !== 0}
+          >
             <div className="payment-info">
               <h3>PayPal</h3>
               <p>$, €, £</p>
@@ -35,7 +39,7 @@ export const TopUpBalance: React.FC = () => {
             <div className="payment-logo">
               <img src={PayPalLogo} alt="PayPal Logo" />
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </div>

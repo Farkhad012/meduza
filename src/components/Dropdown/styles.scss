@@ -27,9 +27,15 @@
   & .dropdown-header p {
     display: inline;
     width: 100%;
+    color: black;
+    font-weight: 300;
   }
 
   & .dropdown-list {
+    font-family: $primary-font;
+    font-size: clamp(0.75rem, 0.6553rem + 0.3883vw, 1rem);
+    color: $modal-text-color;
+    font-weight: 300;
     width: 100%;
     outline: 1px solid $border-color;
     border-radius: 15px;

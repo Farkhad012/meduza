@@ -102,8 +102,6 @@
     &__button-round .account {
       display: none;
     }
-
-
   }
 
   &__button-round::before {
@@ -123,15 +121,7 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
-
-  @media screen and (max-width: 1024px) {
-    &__button-round::before {
-      display: none;
-    }
-  }
 }
-
-
 
 @media screen and (max-width: 1024px) {
   .header-support {

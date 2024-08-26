@@ -232,6 +232,18 @@
     color: $secondary-text-color;
   }
 
+  @media (hover:hover) {
+    &>button:hover {
+      color: $secondary-text-color;
+    }
+  }
+  
+  @media (hover:none) {
+    &>button:hover {
+      color: inherit;
+    }
+  }
+
   &>button.active {
     color: $secondary-text-color;
   }

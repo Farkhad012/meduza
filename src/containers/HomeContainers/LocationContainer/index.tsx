@@ -34,7 +34,7 @@ export const LocationContainer: React.FC = () => {
   return (
     <section id="location">      
       <div className="location__container">
-        <h2 className="location__title">
+        <h2 className="location__title blur">
           <span>{t('Choose_the_location_')}</span>
           {t('Where_your_vpn_should_be_hosted_')}
         </h2>

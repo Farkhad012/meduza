@@ -63,6 +63,18 @@ button:hover {
   filter: brightness(0.8);
 }
 
+@media (hover:hover) {
+  button:hover {
+    filter: brightness(0.8);
+  }
+}
+
+@media (hover:none) {
+  button:hover {
+    filter: brightness(1);
+  }
+}
+
 button::-moz-focus-inner {
   padding: 0;
   border: 0;

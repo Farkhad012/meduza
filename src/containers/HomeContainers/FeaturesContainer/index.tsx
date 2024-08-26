@@ -43,7 +43,7 @@ export const FeaturesContainer: React.FC = () => {
             {t('Low_cost_')}
             </li>
           </ul>
-          <div className="guarantee">
+          <div className="guarantee blur">
             <h5 className="guarantee__title">{t('Changed_your_mind_')}</h5>
             <p className="guarantee__text">
             {t('No_problem_')}

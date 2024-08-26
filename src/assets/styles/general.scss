@@ -54,19 +54,7 @@ h3 {
 }
 
 h4 {
-  font-size: 22px;
-}
-
-@media screen and (max-width: 1024px) {
-  h4 {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  h4 {
-    font-size: 18px;
-  }
+  font-size: clamp(1.125rem, 1.0303rem + 0.3883vw, 1.375rem);
 }
 
 h5 {

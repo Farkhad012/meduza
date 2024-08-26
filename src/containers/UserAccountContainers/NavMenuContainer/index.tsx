@@ -140,7 +140,6 @@ export const NavMenuContainer: React.FC = () => {
         sx={{
           maxHeight: '100%',
           display: 'flex',
-          // alignItems: window.innerHeight > 800 ? "center" : "flex-start",
           justifyContent: 'center',
           marginLeft: '5vw',
           marginRight: '5vw',

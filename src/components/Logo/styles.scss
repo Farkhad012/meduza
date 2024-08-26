@@ -5,23 +5,9 @@
   align-items: center;
   gap: 20px;
   font-family: 'Unbounded';
-  font-size: 24px;
+  font-size: clamp(1.125rem, 0.983rem + 0.5825vw, 1.5rem);
   font-weight: 300;
   color: $logo-txt-color;
-}
-
-
-
-@media screen and (max-width: 1024px) {
-  .logo {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .logo {
-    font-size: 18px;
-  }
 }
 
 .logo>img:last-child {
@@ -33,17 +19,11 @@
   align-items: center;
   gap: 20px;
   font-family: 'Unbounded';
-  font-size: 20px;
+  font-size: clamp(0.875rem, 0.733rem + 0.5825vw, 1.25rem);
   font-weight: 300;
   color: $logo-txt-color;
 
   &__span {
     font-weight: 400;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .account-logo {
-    font-size: 14px;
   }
 }
