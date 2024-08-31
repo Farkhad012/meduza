@@ -24,6 +24,9 @@ export const RangeSlider: React.FC = () => {
     <div className="range-slider">
       <div className="slider-labels slider-labels-top">
         <span className="label">
+          {t('Discount_')}:
+        </span>
+        <span className="label">
           -5% {t('OFF_')}
         </span>
         <span className="label">
@@ -73,22 +76,22 @@ export const RangeSlider: React.FC = () => {
           1 {t('Month_')}
         </span>
         <span className="label">
-          3 {t('Month_')}
+          3 {t('Months_')}
         </span>
         <span className="label">
-          6 {t('Month_')}
+          6 {t('Monthss_')}
         </span>
         <span className="label">
-          12 {t('Month_')}
+          12 {t('Monthss_')}
         </span>
         <span className="label">
-          24 {t('Month_')}
+          24 {t('Months_')}
         </span>
         <span className="label">
-          36 {t('Month_')}
+          36 {t('Monthss_')}
         </span>
         <span className="label">
-          60 {t('Month_')}
+          60 {t('Monthss_')}
         </span>
       </div>
     </div>

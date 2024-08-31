@@ -9,15 +9,15 @@ interface ButtonProps {
   textColor?: string;
   fontSize?: number;
   border?: 'border' | '';
-  width?: number; // Width as a number, which will be treated as pixels
+  width?: number; 
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  type = 'button', // Default type to 'button'
+  type = 'button', 
   color,
   text,
   textColor,
-  border = '', // Default border to an empty string
+  border = '', 
   fontSize,
   onClick,
   width
@@ -25,7 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
   const buttonStyle = {
     color: textColor,
     fontSize: fontSize ? `${fontSize}px` : undefined,
-    width: width ? `${width}%` : undefined // Assume width is in pixels
+    width: width ? `${width}%` : undefined 
   };
 
   return (

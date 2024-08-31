@@ -1,7 +1,7 @@
 @import '/src/assets/styles/general.scss';
 
 .custom-dropdown {
-  outline: 1px solid $border-color;
+  border: 1px solid $border-color;
   border-radius: 15px;
   position: relative;
   transition: all 0.3s ease;
@@ -37,12 +37,13 @@
     color: $modal-text-color;
     font-weight: 300;
     width: 100%;
-    outline: 1px solid $border-color;
+    border: 1px solid $border-color;
     border-radius: 15px;
     position: absolute;
     transform: translateY(20%);
     left: 0;
     z-index: 2;
+    overflow: hidden;
 
     &>li {
       padding: clamp(0.75rem, 0.6713rem + 0.3704vw, 1rem);

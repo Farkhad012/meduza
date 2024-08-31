@@ -32,11 +32,13 @@ gsap.registerPlugin(ScrollTrigger);
 export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
   top, left, right, width, height, zIndex, opacity, frameCount, columns, rows, frameSpeed = 1,
   initialXDesktop = 0, initialXTablet = 25, initialXMobile = 50,
-  initialYDesktop = 0, initialYTablet = -250, initialYMobile = -300,
+  initialYDesktop = 0, initialYTablet = -250, initialYMobile = 0,
   initialRotateDesktop = -10, initialRotateTablet = -5, initialRotateMobile = -20
 }) => {
   const spriteRef = useRef<HTMLDivElement>(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const animationFrameRef = useRef<number | null>(null);
+  const stopTimeoutRef = useRef<number | null>(null);
 
   const frameWidth = 3560 / columns;
   const frameHeight = 2028 / rows;
@@ -66,18 +68,12 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
     });
   };
 
-  function customEase(t: number) {
-    if (t < 0.5)
-      return -0.5 * (Math.cos(Math.PI * t) - 1);
-    else return t;
-  }
-
   useLayoutEffect(() => {
     if (spriteRef.current) {
       const element = spriteRef.current;
       const totalFrames = frameCount * spriteSheets.length;
       let frameIndex = 0;
-      let startTime = 0;
+      let lastTimestamp = 0;
 
       const updateFrame = () => {
         const sheetIndex = Math.floor(frameIndex / frameCount) % spriteSheets.length;
@@ -91,97 +87,136 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
       };
 
       const animateSprites = (timestamp: number) => {
-        if (startTime === 0) {
-          startTime = timestamp;
+        if (!lastTimestamp) lastTimestamp = timestamp;
+        const delta = timestamp - lastTimestamp;
+
+        if (delta >= (1000 / frameSpeed)) {
+          frameIndex = (frameIndex + 1) % totalFrames;
+          updateFrame();
+          lastTimestamp = timestamp;
         }
-        const elapsed = timestamp - startTime;
-        frameIndex = Math.floor((elapsed / (1000 / frameSpeed)) % totalFrames);
-        updateFrame();
-        requestAnimationFrame(animateSprites);
+
+        if (animationFrameRef.current !== null) {
+          animationFrameRef.current = requestAnimationFrame(animateSprites);
+        }
+      };
+
+      const startAnimatingSprites = () => {
+        if (animationFrameRef.current === null) {
+          animationFrameRef.current = requestAnimationFrame(animateSprites);
+        }
       };
 
       preloadImages(spriteSheets).then(() => {
         setImagesLoaded(true);
+        startAnimatingSprites();  
         gsap.to(element, {
-          opacity: 1,  // Увеличиваем прозрачность
-          duration: 3,  // Длительность анимации
-          ease: 'power2.out'  // Используем плавное затухание для анимации
+          opacity: 1,
+          duration: 3,
+          ease: 'power2.out'
         });
-        requestAnimationFrame(animateSprites);
-      });
 
-      const isMobile = window.innerWidth <= 768;
-      const isTablet = window.innerWidth <= 1024;
 
-      // Получаем размеры окна и документа
-      const docHeight = document.documentElement.scrollHeight;
-      const winWidth = window.innerWidth;
-      // Вычисляем позиции в процентах
-      const startX = isMobile ? -winWidth * 0.4 : (isTablet ? -winWidth * 0.2 : initialXDesktop);
-      const startY = isMobile ? initialYMobile * 0.7 : (isTablet ? initialYTablet : initialYDesktop);
-      const moveX = isMobile ? 0.5 * winWidth : (isTablet ? 0.45 * winWidth : 0.45 * winWidth); // 10%, 30%, 60% ширины окна
-      const finalY = isMobile ? docHeight * 0.86 : (isTablet ? 0.95 * docHeight : 0.95 * docHeight); // 70% и 120% высоты документа
-      const initialRotate = isMobile ? initialRotateMobile : (isTablet ? initialRotateTablet : initialRotateDesktop);
-      const finalRotate = isMobile ? -5 : (isTablet ? 0 : 20);
+        const isMobile = window.innerWidth <= 768;
+        const isTablet = window.innerWidth <= 1024;
 
-      // Устанавливаем начальное положение и нулевую прозрачность
-      gsap.set(element, { rotate: initialRotate, x: startX, y: startY, opacity: 0 });
+        const docHeight = document.documentElement.scrollHeight;
+        const winWidth = window.innerWidth;
 
-      const scrollStart = isMobile ? 'top+=100 center' : isTablet ? 'top center-=350' : 'top center';  // На мобилке start нужен позже
-      const scrollEnd = `center+=${docHeight - window.innerHeight}`;  // Устанавливаем конец в нижнюю часть страницы
+        const startX = isMobile ? -winWidth * 0.4 : (isTablet ? -winWidth * 0.2 : initialXDesktop);
+        const startY = isMobile ? initialYMobile : (isTablet ? initialYTablet : initialYDesktop);
+        const moveX = isMobile ? 0.5 * winWidth : (isTablet ? 0.45 * winWidth : 0.45 * winWidth);
+        const finalY = isMobile ? docHeight - window.innerHeight / 2 * 0.95 : (isTablet ? 0.95 * docHeight : 0.97 * docHeight);
+        const initialRotate = isMobile ? initialRotateMobile : (isTablet ? initialRotateTablet : initialRotateDesktop);
+        const finalRotate = isMobile ? -5 : (isTablet ? 0 : 20);
 
-      const zigzagMovement = gsap.timeline({
-        scrollTrigger: {
-          trigger: element,
-          start: scrollStart,
-          end: scrollEnd,
-          scrub: 10,  // анимацию делаем плавную
-          markers: false,
-          toggleActions: 'play pause reverse pause'
-        }
-      });
+        gsap.set(element, { rotate: initialRotate, x: startX, y: startY, opacity: 0 });
 
-      if (isMobile) {
-        // Определяем длительности для каждого этапа
-        const firstPhaseDuration = finalY * 1.2 / 1000;  // 40% пути
-        const secondPhaseDuration = finalY * 1.5 / 1000; // 40% пути
-        const thirdPhaseDuration = finalY * 0.8 / 1000;  // 20% пути
+        const scrollStart = isMobile ? 'top+=100 center' : isTablet ? 'top center-=350' : 'top center';
+        const scrollEnd = `center+=${docHeight - window.innerHeight}`;
+        const scrubTime = 11;
 
-        // Анимация по X и Y
-        zigzagMovement
-          .to(element, {
+        const zigzagMovement = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: scrollStart,
+            end: scrollEnd,
+            scrub: scrubTime,
+            markers: false
+          }
+        });
+
+        const movementYModifier = isMobile ? 45 : 50;
+        const movementYFrequency = isMobile ? 6 * (2 * Math.PI) / (finalY * 0.4) : 0.018;
+
+
+        if (isMobile) {
+          const firstPhaseDuration = finalY * 0.4 / 1000;
+          const secondPhaseDuration = finalY * 0.4 / 1000;
+          const thirdPhaseDuration = finalY * 0.2 / 1000;
+
+          zigzagMovement
+            .to(element, {
+              x: moveX,
+              y: finalY * 0.4,
+              duration: firstPhaseDuration,
+              ease: 'none',
+              modifiers: {
+                y: gsap.utils.unitize(y => {
+                  const amplitude = movementYModifier;
+                  const frequency = movementYFrequency;
+                  return y + amplitude * Math.sin(frequency * y);
+                })
+              }
+            })
+            .to(element, {
+              x: startX + 50,
+              y: finalY * 0.8,
+              duration: secondPhaseDuration,
+              ease: 'none',
+              modifiers: {
+                y: gsap.utils.unitize(y => {
+                  const amplitude = movementYModifier;
+                  const frequency = movementYFrequency;
+                  console.log('sinus ', Math.sin(frequency * y))
+                  return y + amplitude * Math.sin(frequency * y);
+                })
+              }
+            })
+            .to(element, {
+              x: moveX * 0.55,
+              y: finalY * 0.97,
+              duration: thirdPhaseDuration,
+              ease: 'none',
+              modifiers: {
+                y: gsap.utils.unitize(y => {
+                  const amplitude = movementYModifier;
+                  const frequency = movementYFrequency/2;
+                  return y + amplitude * Math.sin(frequency * y);
+                })
+              }
+            })
+            .to(element, {
+              rotate: finalRotate,
+              ease: 'none',
+            });
+        } else {
+          zigzagMovement.to(element, {
             x: moveX,
-            y: finalY * 0.3,
-            duration: firstPhaseDuration,
-            ease: customEase
-          })
-          .to(element, {
-            x: -moveX * 0.7,
-            y: finalY * 0.8,
-            duration: secondPhaseDuration,
-            ease: 'none'
-          })
-          .to(element, {
-            x: moveX * 0.55,
             y: finalY,
-            duration: thirdPhaseDuration,
-            ease: 'sine.inOut'
+            rotate: finalRotate,
+            ease: 'none',
+            modifiers: {
+              y: gsap.utils.unitize(y => {
+                const amplitude = movementYModifier;
+                const frequency = movementYFrequency;
+                return y + amplitude * Math.sin(frequency * y);
+              })
+            }
           });
+        }
 
-        // Анимация поворота
-        zigzagMovement.to(element, {
-          rotate: finalRotate,
-          ease: 'none',
-        });
-      } else {
-        // Для остальных устройств
-        zigzagMovement.to(element, {
-          x: moveX,
-          y: finalY,
-          rotate: finalRotate,
-          ease: 'none',
-        });
-      }
+      });
 
       return () => {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -209,7 +244,6 @@ export const SpriteAnimation: React.FC<SpriteAnimationProps> = ({
         transformOrigin: 'center',
       }}
     >
-      {!imagesLoaded && <div className="loading">Loading...</div>}
     </div>
   );
 };
