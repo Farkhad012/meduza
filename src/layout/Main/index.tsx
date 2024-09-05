@@ -29,16 +29,23 @@ export const Main: React.FC = () => {
           {currentPath === PathName.Home && (
             <>
               <Glow top="25%" left="10%" height="10vw" width="40vw" />
+              <Glow top="15%" left="90%" height="10vw" width="40vw" />
               <Glow top="50%" left="90%" height="10vw" width="40vw" />
-              <Glow top="75%" left="10%" height="10vw" width="40vw" />
+              <Glow top="60%" left="0%" height="10vw" width="40vw" />
+              <Glow top="90%" left="90%" height="10vw" width="40vw" />
 
-              <Circle top="1%" left="110%" size="40vw" opacity="0.5" />
-              <Circle top="20%" left="10%" size="40vw" zIndex="0" parallaxSpeed={0.1} opacity="0.3" />
+              <Circle top="5%" left="105%" size="30vw" opacity="0.5" />
+              <Circle top="10%" left="10%" size="20vw" zIndex="0" parallaxSpeed={0.1} opacity="0.3" />
               <Circle top="17%" left="10%" size="7vw" zIndex="10" parallaxSpeed={0.4} />
-              <Circle top="20%" left="80%" size="22vw" zIndex="0" opacity="0.5" parallaxSpeed={0.6} />
+              <Circle top="30%" left="30%" size="16vw" zIndex="0" opacity="0.5" parallaxSpeed={0.6} />
+              <Circle top="25%" left="90%" size="16vw" zIndex="0" opacity="0.5" parallaxSpeed={0.3} />
+              <Circle top="35%" left="10%" size="10vw" zIndex="0" opacity="0.5" parallaxSpeed={0.6} />
               <Circle top="35%" left="110%" size="30vw" zIndex="0" opacity="0.2" parallaxSpeed={0.4} />
-              <Circle top="53%" left="60%" size="20vw" zIndex="0" opacity="0.5" parallaxSpeed={0.2} />
+              <Circle top="50%" left="10%" size="10vw" zIndex="0" parallaxSpeed={0.4} />
+              <Circle top="60%" left="80%" size="20vw" zIndex="0" opacity="0.5" parallaxSpeed={0.2} />
               <Circle top="67%" left="0%" size="30vw" zIndex="0" opacity="0.5" parallaxSpeed={0.2} />
+              <Circle top="80%" left="95%" size="30vw" zIndex="0" opacity="0.5" parallaxSpeed={0.2} />
+              <Circle top="88%" left="10%" size="18vw" zIndex="0" opacity="0.3" parallaxSpeed={0.4} />
 
 
               <SpriteAnimation
